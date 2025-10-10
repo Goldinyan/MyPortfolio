@@ -1,1 +1,60 @@
 @import "tailwindcss";
+
+@theme {
+  --breakpoint-*: initial; /* Makes it override the default ones */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+
+  --color-orange-500: #ffa500; /* Makes it override the color orange 500 */
+}
+
+@theme {
+  --color-bg-black: #0e0c0d;
+  --color-card-bg: #0f0f0f;
+  --color-small-card-bg: #0e0c0d;
+  --color-border-bg: #1a1a1a;
+  --color-island-bg: #171718;
+  --color-text-primary: #878d97;
+  --color-text-secondary: #a7c7ff;
+  --color-custom-gray: #1e1e1f;
+  --color-custom-gray-2: #464547;
+}
+
+/* Scroll-Animation */
+.marquee {
+  display: inline-block;
+  white-space: nowrap;  
+  animation: scroll-left 5s linear infinite;
+  transform: translateX(100%); /* Start außerhalb rechts */
+  will-change: transform;
+}
+
+/* Hover-Pause */
+.group:hover .pause-on-hover {
+  animation-play-state: paused;
+}
+
+/* Keyframes für endloses Scrollen */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(250%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+}
