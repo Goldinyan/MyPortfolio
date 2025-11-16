@@ -14,7 +14,7 @@ export default function Servies() {
   ];
 
   return (
-    <div className="w-full  h-60 border-2 bg-card-bg border-border-bg rounded-2xl">
+    <div className="w-full border-2 bg-card-bg border-border-bg rounded-2xl">
       <div className="flex flex-col p-5">
         <p className="text-white text-3xl">Services</p>
         <p className="text-custom-gray-2 text-1 pt-1 ">
@@ -23,7 +23,7 @@ export default function Servies() {
       </div>
 
       <div
-        className="flex flex-col gap-4 w-full p-3"
+        className="flex flex-col gap-4 w-full p-3 "
         style={{
           backgroundColor: "var(--background)",
           borderRadius: "var(--radius)",
@@ -32,12 +32,18 @@ export default function Servies() {
         <div className="fade-mask h-10 w-full">
           <div className="scrolling-container">
             {stuff.map((item, i) => (
-              <div key={`original-${i}`} className="inline-block  bg-small-card-bg font-bold text-text-secondary text-md  px-4 py-2 rounded-xl whitespace-nowrap">
+              <div
+                key={`original-${i}`}
+                className="inline-block  bg-small-card-bg font-bold text-text-secondary text-md  px-4 py-2 rounded-xl whitespace-nowrap"
+              >
                 {item}
               </div>
             ))}
             {stuff.map((item, i) => (
-              <div key={`duplicate-${i}`} className="inline-block text-text-secondary text-md font-bold bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap">
+              <div
+                key={`duplicate-${i}`}
+                className="inline-block text-text-secondary text-md font-bold bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+              >
                 {item}
               </div>
             ))}
@@ -47,12 +53,18 @@ export default function Servies() {
         <div className="fade-mask h-10 w-full">
           <div className="scrolling-container-reverse">
             {stuff.map((item, i) => (
-              <div key={`reverse-original-${i}`} className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap">
+              <div
+                key={`reverse-original-${i}`}
+                className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+              >
                 {item}
               </div>
             ))}
             {stuff.map((item, i) => (
-              <div key={`reverse-duplicate-${i}`} className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap">
+              <div
+                key={`reverse-duplicate-${i}`}
+                className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+              >
                 {item}
               </div>
             ))}

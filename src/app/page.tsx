@@ -28,6 +28,9 @@ export default function Home() {
        </div>
         
         <div className="w-full p-2 rounded-2xl">
+          <LittleStuff />
+        </div>
+        <div className="w-full p-2 rounded-2xl">
            <WorkTogether />
         </div>
 
