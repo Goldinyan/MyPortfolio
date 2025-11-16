@@ -6,7 +6,7 @@ import { ReactTyped } from "react-typed";
 export default function WorkTogether() {
   const items: { text: string; icon: React.ReactNode }[] = [
     {
-      text: "Contact me via Mail",
+      text: "Contact me via Email",
       icon: <Mail className="h-5" style={{ color: "#5865F2" }} />,
     },
     {
@@ -40,21 +40,27 @@ export default function WorkTogether() {
               className=" font-medium text-text-secondary"
             />
           </p>
-          <div>
-            {items.map((item, index) => (
-              <div key={index} className="w-60 mt-4 mb-2">
-                <button
-                  onClick={() => {
-                    if (item.text.includes("Mail")) {
-                      window.location.href = "mailto:someone@example.com";
-                    }
-                  }}
-                >
-                  {item.icon} {item.text}
-                </button>
-              </div>
-            ))}
-          </div>
+          <div className="flex gap-4">
+  {items.map((item, index) => (
+    <div key={index} className="mt-4 mb-2 group  bg-bg-black px-4 py-2 hover:bg-gray-900 border border-border-bg rounded-xl hover:scale-105 transition-transform">
+      <button
+        onClick={() => {
+          if (item.text.includes("Email")) {
+            window.location.href = "mailto:seifert.ansgar@example.com";
+          }
+        }}
+        className="relative flex flex-col items-center "
+      >
+        {item.icon}
+
+        <p className="absolute -top-14 text-sm text-white w-50  bg-bg-black px-4 py-2 border border-border-bg rounded-xl   opacity-0 group-hover:opacity-100 transition">
+          {item.text}
+        </p>
+      </button>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </div>

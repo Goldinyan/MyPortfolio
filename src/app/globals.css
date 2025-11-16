@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-*: initial; /* Makes it override the default ones */
+  --breakpoint-*: initial; 
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 976px;
 
-  --color-orange-500: #ffa500; /* Makes it override the color orange 500 */
+  --color-orange-500: #ffa500; 
 }
 
 @theme {
@@ -21,19 +21,21 @@
   --color-custom-gray-2: #464547;
 }
 
-/* Scroll-Animation */
 .marquee {
   display: inline-block;
   white-space: nowrap;  
   animation: scroll-left 5s linear infinite;
-  transform: translateX(100%); /* Start außerhalb rechts */
+  transform: translateX(100%); 
   will-change: transform;
+}
+
+html, body {
+  @apply bg-bg-black h-full;
 }
 
 
 
 
-/* Infinite Scroll Animation */
 @keyframes infiniteScroll {
   0% {
     transform: translate3d(0, 0, 0);
@@ -58,7 +60,6 @@
   gap: 2rem;
   width: max-content;
   transition: animation-play-state 0.2s ease;
-  /* performance hints to avoid stutter at loop point */
   will-change: transform;
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;

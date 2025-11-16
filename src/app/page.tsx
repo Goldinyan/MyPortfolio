@@ -5,38 +5,33 @@ import LittleStuff from './littleStuff'
 import WorkTogether from './workTogether';
 import Projects from './projects';
 import TechStack from './techStack';
+import Testimonials from './testimonials';
 
 export default function Home() {
   return (
-    <div className="w-full h-full bg-bg-black overflow-y-hidden overflow-x-hidden">
+    <div className="w-full min-h-screen bg-bg-black overflow-x-hidden">
       <div className="w-full h-full grid gap-4 grid-cols-1 lg:grid-cols-2 p-4">
-
         <div className="w-full p-2 rounded-2xl">
-           <Profile />
+          <Profile />
         </div>
-       
-       <div className="w-full p-2 rounded-2xl">
-           <Services />
+        <div className="w-full p-2 rounded-2xl">
+          <Services />
         </div>
-
-       <div className="w-full p-2 rounded-2xl">
-           <Projects />
+        <div className="w-full p-2 rounded-2xl">
+          <Projects />
         </div>
-        
-       <div className='w-full p-2 rounded-2xl'>
-        <TechStack />
-       </div>
-        
+        <div className="w-full p-2 rounded-2xl">
+          <TechStack />
+        </div>
         <div className="w-full p-2 rounded-2xl">
           <LittleStuff />
         </div>
         <div className="w-full p-2 rounded-2xl">
-           <WorkTogether />
+          <WorkTogether />
         </div>
-
-
-
-
+         <div className="w-full p-2 rounded-2xl">
+          <Testimonials />
+        </div>
       </div>
     </div>
   );
