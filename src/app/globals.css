@@ -36,44 +36,47 @@
 /* Infinite Scroll Animation */
 @keyframes infiniteScroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes infiniteScrollReverse {
   0% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.scrolling-container {
+.scrolling-container,
+.scrolling-container-reverse {
   display: flex;
-  animation: infiniteScroll 30s linear infinite;
   gap: 2rem;
   width: max-content;
   transition: animation-play-state 0.2s ease;
+  /* performance hints to avoid stutter at loop point */
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  contain: paint;
 }
 
-.scrolling-container.paused {
+.scrolling-container {
+  animation: infiniteScroll 30s linear infinite;
+}
+
+.scrolling-container.paused,
+.scrolling-container-reverse.paused {
   animation-play-state: paused;
 }
 
 .scrolling-container-reverse {
-  display: flex;
   animation: infiniteScrollReverse 30s linear infinite;
-  gap: 2rem;
-  width: max-content;
-  transition: animation-play-state 0.2s ease;
-}
-
-.scrolling-container-reverse.paused {
-  animation-play-state: paused;
 }
 
 .fade-mask {

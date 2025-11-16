@@ -4,6 +4,7 @@ import Services from './services'
 import LittleStuff from './littleStuff'
 import WorkTogether from './workTogether';
 import Projects from './projects';
+import TechStack from './techStack';
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
            <Projects />
         </div>
         
-       
+       <div className='w-full p-2 rounded-2xl'>
+        <TechStack />
+       </div>
         
         <div className="w-full p-2 rounded-2xl">
            <WorkTogether />
