@@ -1,0 +1,11 @@
+"use client"
+
+
+
+export default function LittleStuff() {
+  return (
+     <div className="w-full h-100 border-2  rounded-2xl bg-card-bg border-border-bg  ">
+    <p>DASDS</p>
+    </div>
+  );
+}

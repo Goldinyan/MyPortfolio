@@ -1,19 +1,34 @@
 import './globals.css'
-import Profile from './profile';
-import Services from './services';
+import Profile from './profile'
+import Services from './services'
+import LittleStuff from './littleStuff'
+import WorkTogether from './workTogether';
+import Projects from './projects';
 
 export default function Home() {
   return (
-    <div className="w-full h-full bg-bg-black">
-      <div className="w-full h-full  flex flex-col items-center  gap-5 justify-center">
-        <div className="mt-10">
+    <div className="w-full h-full bg-bg-black overflow-y-hidden overflow-x-hidden">
+      <div className="w-full h-full grid gap-4 grid-cols-1 lg:grid-cols-2 p-4">
+
+        <div className="w-full p-2 rounded-2xl">
            <Profile />
         </div>
        
-       <div className="mb-40">
+       <div className="w-full p-2 rounded-2xl">
            <Services />
         </div>
+
+       <div className="w-full p-2 rounded-2xl">
+           <Projects />
+        </div>
         
+       
+        
+        <div className="w-full p-2 rounded-2xl">
+           <WorkTogether />
+        </div>
+
+
 
 
       </div>

@@ -30,31 +30,83 @@
   will-change: transform;
 }
 
-/* Hover-Pause */
-.group:hover .pause-on-hover {
+
+
+
+/* Infinite Scroll Animation */
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes infiniteScrollReverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.scrolling-container {
+  display: flex;
+  animation: infiniteScroll 30s linear infinite;
+  gap: 2rem;
+  width: max-content;
+  transition: animation-play-state 0.2s ease;
+}
+
+.scrolling-container.paused {
   animation-play-state: paused;
 }
 
-/* Keyframes für endloses Scrollen */
-@keyframes scroll-left {
-  0% {
-    transform: translateX(250%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0;
-  }
-  30% {
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-150%);
-    opacity: 0;
-  }
+.scrolling-container-reverse {
+  display: flex;
+  animation: infiniteScrollReverse 30s linear infinite;
+  gap: 2rem;
+  width: max-content;
+  transition: animation-play-state 0.2s ease;
+}
+
+.scrolling-container-reverse.paused {
+  animation-play-state: paused;
+}
+
+.fade-mask {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.fade-mask::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(90deg, var(--color-card-bg) 0px, var(--color-card-bg) 10px, transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fade-mask::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(270deg, var(--color-card-bg) 0px, var(--color-card-bg) 10px, transparent 100%);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.fade-mask:hover .scrolling-container,
+.fade-mask:hover .scrolling-container-reverse {
+  animation-play-state: paused;
 }
