@@ -34,7 +34,18 @@ const Tags: Tag[] = [
 
 const sortValues = ["Newest First", "A-Z", "Z-A"] as const;
 type Sort = (typeof sortValues)[number];
-
+type Projects = {
+  title: string;
+  feautured: boolean;
+  tags: Tag[];
+  des: string;
+  date: Date;
+  img: string;
+  openSoure: boolean;
+  hasDemo: boolean;
+  sourceLink: string;
+  demoLink: string;
+};
 export default function Home() {
   const [typeFilter, setTypeFilter] = useState<TypeFilter>({
     demo: false,
@@ -42,18 +53,8 @@ export default function Home() {
   });
   const [tagsFilter, setTagsFilter] = useState<Tag[]>([]);
   const [sort, setSort] = useState<Sort>("Newest First");
-  const projects: {
-    title: string;
-    feautured: boolean;
-    tags: Tag[];
-    des: string;
-    date: Date;
-    img: string;
-    openSoure: boolean;
-    hasDemo: boolean;
-    sourceLink: string;
-    demoLink: string;
-  }[] = [
+  const [filProjects, setFilProjects] = useState<Projects[]>([]);
+  const projects: Projects[] = [
     {
       title: "Coding Kids Niederhein",
       feautured: false,
@@ -121,18 +122,38 @@ export default function Home() {
     );
   };
 
-  const sortedProjects = [...projects].sort((a, b) => {
-    if (sort === "Newest First") {
-      return b.date.getTime() - a.date.getTime();
+  useEffect(() => {
+    let sortedProjects = [...projects];
+
+    sortedProjects = sortedProjects.sort((a, b) => {
+      if (sort === "Newest First") {
+        return b.date.getTime() - a.date.getTime();
+      }
+      if (sort === "A-Z") {
+        return a.title.localeCompare(b.title);
+      }
+      if (sort === "Z-A") {
+        return b.title.localeCompare(a.title);
+      }
+      return 0;
+    });
+
+    if (typeFilter.demo) {
+      sortedProjects = sortedProjects.filter((project) => project.hasDemo);
     }
-    if (sort === "A-Z") {
-      return a.title.localeCompare(b.title);
+
+    if (typeFilter.openSource) {
+      sortedProjects = sortedProjects.filter((project) => project.openSoure);
     }
-    if (sort === "Z-A") {
-      return b.title.localeCompare(a.title);
+
+    if (tagsFilter.length !== 0) {
+      sortedProjects = sortedProjects.filter((project) =>
+        tagsFilter.every((tag) => project.tags.includes(tag))
+      );
     }
-    return 0;
-  });
+
+    setFilProjects(sortedProjects);
+  }, [tagsFilter, sort, typeFilter]);
 
   return (
     <>
@@ -219,15 +240,9 @@ export default function Home() {
           </select>
         </div>
 
-        <div className="p-4"></div>
-      </div>
-    </>
-  );
-}
-
-{
-  /* <div className="grid md:grid-cols-2 mx-10 gap-4">
-            {projects.map((project, i) => {
+        <div className="p-4">
+              <div className="grid md:grid-cols-2 mx-10 gap-4">
+            {filProjects.map((project, i) => {
                 return(
                     <div className="bg-card-bg w-full border border-border-bg rounded-2xl" key={i}>
                         <img src={project.img} className="" />
@@ -235,5 +250,13 @@ export default function Home() {
                     </div>
                 )
             })}
-        </div> */
+        </div> 
+        </div>
+      </div>
+    </>
+  );
 }
+
+
+ 
+

@@ -15,7 +15,7 @@ const items: { title: string, des: string, icon: JSX.Element }[] = [
     icon: <Users className="h-5 w-5 text-text-secondary mr-2" />,
   },
   {
-    title: "Yrs Experience",
+    title: "Yrs Expertise",
     des: "1",
     icon: <Star className="h-5 w-5 text-text-secondary mr-2" />,
   },
@@ -29,7 +29,7 @@ export default function LittleStuff() {
     <div
       key={index}
       className={`h-28 border-2 rounded-2xl bg-card-bg border-border-bg p-4 
-        ${index === 2 ? "sm:col-span-2 lg:col-span-1" : ""}`}
+        ${index === 2 ? "sm:col-span-2 lg:col-span-1 " : ""}`}
     >
       <div className="flex flex-col">
         <div className="flex flex-row pb-1 items-center justify-center">
@@ -47,7 +47,7 @@ export default function LittleStuff() {
         </div>
         <div className="flex flex-row bg-island-bg px-2 py-1 rounded-lg mx-auto items-center justify-center">
           {item.icon}
-          <p className="text-text-primary font-medium">{item.title}</p>
+          <p className="text-text-primary font-regular text-sm">{item.title}</p>
         </div>
       </div>
     </div>

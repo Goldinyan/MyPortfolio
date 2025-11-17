@@ -10,7 +10,7 @@ import Testimonials from "./testimonials";
 export default function Home() {
   return (
     <div className="w-full min-h-screen bg-bg-black overflow-x-hidden">
-      <div className="grid grid-cols-1  l:grid-cols-2 xl:grid-cols-3 gap-4 p-4 mx-20">
+      <div className="grid grid-cols-1  l:grid-cols-2 xl:grid-cols-3 p-4 mx-10">
         <div>
           <div className="p-2 rounded-2xl">
             <Profile />
