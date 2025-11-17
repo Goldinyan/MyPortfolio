@@ -39,10 +39,10 @@ export default function TechStack() {
           Here are some of the technologies I work with:
         </p>
       </div>
-      <div className="flex flex-col gap-4 pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-10">
         {items.map((item) => {
           return (
-            <div key={item.text} className="flex items-center justify-between mx-4 p-2 rounded-xl bg-small-card-bg">
+            <div key={item.text} className="flex group items-center justify-between mx-4 p-2 rounded-xl bg-small-card-bg">
               <button
                 onClick={() => {
                   if (item.link) {
@@ -59,7 +59,7 @@ export default function TechStack() {
 
                   <p className="ml-2 text-white font-lg">{item.text}</p>
                 </div>
-                <ArrowUpRight className="h-10 w-10 hover:scale-110 duration-200 transition-transform text-text-secondary p-1 rounded-xl bg-neutral-900 border-border-bg border-2" />
+                <ArrowUpRight className="h-10 w-10 group-hover:scale-110 duration-200 transition-transform text-text-secondary p-1 rounded-xl bg-neutral-900 border-border-bg border-2" />
               </button>
             </div>
           );

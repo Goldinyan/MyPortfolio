@@ -1,7 +1,12 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+
 export default function Projects() {
-  const stuff = ["./assets/pg1.png", "./assets/pg2.png", "./assets/pg3.png"];
+
+    const router = useRouter(); 
+    const stuff = ["./assets/pg1.png", "./assets/pg2.png", "./assets/pg3.png"];
+
   return (
     <div className="w-full   border-2  rounded-2xl bg-card-bg border-border-bg  ">
       <div className="flex flex-col p-5">
@@ -22,7 +27,7 @@ export default function Projects() {
             {stuff.map((item, i) => (
               <div
                 key={i}
-                className="inline-block rounded-xl md:w-80 w-60   whitespace-nowrap"
+                className="inline-block rounded-xl  w-70   whitespace-nowrap"
               >
                 <img
                   src={item}
@@ -34,7 +39,7 @@ export default function Projects() {
             {stuff.map((item, i) => (
               <div
                 key={i}
-                className="inline-block md:w-80 w-60  rounded-xl whitespace-nowrap"
+                className="inline-block  w-70  rounded-xl whitespace-nowrap"
               >
                 <img
                   src={item}
@@ -46,9 +51,11 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <div className="mx-auto flex absolute  items-center justify-center px-3 z-20 py-2 mb-4 bg-text-secondary w-40 rounded-lg ">
-          <p className="font-semibold">View All Projects</p>
+      <div className="flex items-center pb-8 justify-center">
+        <div className="mx-auto flex absolute  items-center justify-center px-3 hover:scale-110 cursor-pointer transition-transform z-20 py-2 mb-4 bg-text-secondary  rounded-lg ">
+          <p onClick={() => (
+            router.push('/projects')
+          )} className="font-medium">View All Projects</p>
         </div>
       </div>
     </div>

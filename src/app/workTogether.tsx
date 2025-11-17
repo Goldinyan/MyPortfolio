@@ -25,15 +25,15 @@ export default function WorkTogether() {
     <div className="w-full  border-2  rounded-2xl bg-card-bg border-border-bg  ">
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-col p-5 ">
-          <HeartHandshake className="w-25 h-25 bg-bg-black p-3 rounded-full border border-border-bg text-text-secondary mb-2" />
+          <HeartHandshake className="w-25 h-25 hover:rotate-45 transition-all duration-300 bg-bg-black p-3 rounded-full border border-border-bg text-text-secondary mb-2" />
         </div>
 
-        <div className="flex flex-col justify-center items-center p-5 pt-0">
+        <div className="flex flex-col justify-center items-center p-6 pt-0">
           <p className="text-white font-bold text-xl">Lets Work Together</p>
           <p className="font-medium text-text-primary">
             and make your ideas come to{" "}
             <ReactTyped
-              strings={["life", "reality"]}
+              strings={["life", "reality", "existence"]}
               typeSpeed={60}
               backSpeed={70}
               loop
@@ -41,26 +41,29 @@ export default function WorkTogether() {
             />
           </p>
           <div className="flex gap-4">
-  {items.map((item, index) => (
-    <div key={index} className="mt-4 mb-2 group  bg-bg-black px-4 py-2 hover:bg-gray-900 border border-border-bg rounded-xl hover:scale-105 transition-transform">
-      <button
-        onClick={() => {
-          if (item.text.includes("Email")) {
-            window.location.href = "mailto:seifert.ansgar@example.com";
-          }
-        }}
-        className="relative flex flex-col items-center "
-      >
-        {item.icon}
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className="mt-4 mb-2 group  bg-bg-black px-4 py-2 hover:bg-gray-900 border border-border-bg rounded-xl hover:scale-105 transition-transform"
+              >
+                <button
+                  onClick={() => {
+                    if (item.text.includes("Email")) {
+                      window.location.href =
+                        "mailto:seifert.ansgar@example.com";
+                    }
+                  }}
+                  className="relative flex flex-col items-center "
+                >
+                  {item.icon}
 
-        <p className="absolute -top-14 text-sm text-white w-50  bg-bg-black px-4 py-2 border border-border-bg rounded-xl   opacity-0 group-hover:opacity-100 transition">
-          {item.text}
-        </p>
-      </button>
-    </div>
-  ))}
-</div>
-
+                  <p className="absolute -top-14 text-sm text-white w-50  bg-bg-black px-4 py-2 border border-border-bg rounded-xl duration-300   opacity-0 group-hover:opacity-100 transition-all">
+                    {item.text}
+                  </p>
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

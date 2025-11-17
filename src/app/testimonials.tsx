@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 
 const testimonials = [
   {
@@ -25,6 +26,9 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+
+  const router = useRouter();
+
   return (
     <div className="relative w-full h-100 overflow-hidden border-2 rounded-2xl bg-card-bg border-border-bg">
       <div className="flex flex-col px-5 pt-5">
@@ -71,18 +75,21 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <p className="text-text-secondary italic mb-4">
+            <p className="text-text-secondary italic mb-4 pt-2">
               "{testimonial.feedback}"
             </p>
           </div>
         ))}
       </div>
       <div className="absolute bottom-0 left-0 w-full h-50 bg-gradient-to-t from-card-bg to-transparent pointer-events-none" />
-      <div className="flex items-center justify-center">
-        <div className="mx-auto flex absolute  items-center justify-center px-3 z-20 py-2 mb-4 bg-text-secondary w-40 rounded-lg ">
-          <p className="font-semibold">View All Projects</p>
-        </div>
-      </div>
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 
+                bg-text-secondary rounded-lg border border-border-bg 
+                transition-transform font-medium text-black text-center 
+                px-4 whitespace-nowrap py-2 mb-4 hover:scale-110 cursor-pointer">
+  <p onClick={() => router.push('/testimonials')}>View All Testimonials</p>
+</div>
+
     </div>
   );
 }

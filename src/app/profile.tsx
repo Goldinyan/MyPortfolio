@@ -11,7 +11,7 @@ import {
   GraduationCap,
   Gamepad,
 } from "lucide-react";
-import { Github, Mailbox, Mail, FileText, UserPlus } from "lucide-react";
+import { Github, Mailbox, Mail, FileText, UserPlus, Omega } from "lucide-react";
 
 export const traits = [
   { text: "German & English", icon: Languages },
@@ -20,6 +20,7 @@ export const traits = [
   { text: "3D-Print Addict", icon: Printer },
   { text: "16y/o", icon: User },
   { text: "Student", icon: GraduationCap },
+  { text: "Philosopher", icon: Omega}
 ];
 
 export default function Profile() {
@@ -52,11 +53,11 @@ export default function Profile() {
         ))}
       </div>
       <div className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
-        <div className="w-[42.5%] h-10 items-center rounded-2xl  gap-3 justify-center flex bg-text-secondary">
-          <Mail className="h-5" />
+        <div className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-3 justify-center flex bg-text-secondary">
+          <Mail className="h-5 " />
           <p>Hire me</p>
         </div>
-        <div className="w-[42.5%] h-10 items-center rounded-2xl  gap-3 justify-center flex bg-custom-gray">
+        <div className="w-[42.5%] h-10 items-center hover:brightness-90 hover:scale-105 transition-transform cursor-pointer rounded-2xl  gap-3 justify-center flex bg-custom-gray">
           <Github className="h-5 text-white" />
           <p className="text-white">Github</p>
         </div>
