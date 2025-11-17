@@ -76,7 +76,7 @@ html, body {
 .scrolling-container,
 .scrolling-container-reverse {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   width: max-content;
   transition: animation-play-state 0.2s ease;
   will-change: transform;

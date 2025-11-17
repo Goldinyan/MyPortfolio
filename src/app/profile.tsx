@@ -33,7 +33,7 @@ export default function Profile() {
           className="h-25 rounded-2xl ml-[5%] mt-5 object-cover"
         />
         <div className="flex flex-col">
-          <p className="text-3xl text-text-secondary">Goldinyan</p>
+          <p className="text-2xl font-bold text-text-secondary">Goldinyan</p>
           <p className="text-white break-normal w-40 sm:w-60 text-xl-plus">
             I'm a{" "}
             <span className="text-text-secondary">Full Stack Developer</span>
@@ -45,7 +45,7 @@ export default function Profile() {
         {traits.map(({ text, icon: Icon }, index) => (
           <div
             key={index}
-            className="flex items-center hover:scale-110  transition-transform bg-island-bg pr-4 gap-0.5 mx-1 p-1 rounded-[10]"
+            className="flex items-center hover:scale-110 w-full sm:w-auto  transition-transform bg-island-bg pr-4 gap-0.5 mx-1 p-1 rounded-[10]"
           >
             <Icon className=" h-4 text-accent text-text-secondary" />
             <p className="text-gray-400 ">{text}</p>
@@ -53,11 +53,11 @@ export default function Profile() {
         ))}
       </div>
       <div className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
-        <div className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-3 justify-center flex bg-text-secondary">
+        <div className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-1 justify-center flex bg-text-secondary">
           <Mail className="h-5 " />
           <p>Hire me</p>
         </div>
-        <div className="w-[42.5%] h-10 items-center hover:brightness-90 hover:scale-105 transition-transform cursor-pointer rounded-2xl  gap-3 justify-center flex bg-custom-gray">
+        <div className="w-[42.5%] h-10 items-center hover:brightness-90  hover:scale-105 transition-transform cursor-pointer rounded-2xl  gap-1 justify-center flex bg-custom-gray">
           <Github className="h-5 text-white" />
           <p className="text-white">Github</p>
         </div>
