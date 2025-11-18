@@ -45,7 +45,7 @@ export default function Profile() {
         {traits.map(({ text, icon: Icon }, index) => (
           <div
             key={index}
-            className="flex items-center hover:scale-110 w-full sm:w-auto  transition-transform bg-island-bg pr-4 gap-0.5 mx-1 p-1 rounded-[10]"
+            className="flex items-center hover:scale-105 duration-200 w-full sm:w-auto  transition-transform bg-island-bg pr-4 gap-0.5 mx-1 p-1 rounded-[10]"
           >
             <Icon className=" h-4 text-accent text-text-secondary" />
             <p className="text-gray-400 ">{text}</p>

@@ -6,7 +6,7 @@ import { JSX } from "react";
 const items: { title: string, des: string, icon: JSX.Element }[] = [
   {
     title: "Projects",
-    des: "19",
+    des: "4",
     icon: <Folder className="h-5 w-5 text-text-secondary mr-2" />,
   },
   {

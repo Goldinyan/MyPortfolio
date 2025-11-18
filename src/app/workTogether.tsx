@@ -28,7 +28,7 @@ export default function WorkTogether() {
           <HeartHandshake className="w-25 h-25 hover:rotate-45 transition-all duration-300 bg-bg-black p-3 rounded-full border border-border-bg text-text-secondary mb-2" />
         </div>
 
-        <div className="flex flex-col justify-center items-center p-6 pt-0">
+        <div className="flex flex-col justify-center items-center p-4 pt-0">
           <p className="text-white font-bold text-xl">Lets Work Together</p>
           <p className="font-medium text-text-primary">
             and make your ideas come to{" "}

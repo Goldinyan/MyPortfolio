@@ -19,7 +19,7 @@ export const testimonials = [
   {
     name: "Mike Johnson",
     feedback:
-      "Great communication and attention to detail. Will work with Ansgar again.",
+      "Great communication and attention to detail. Will work with Goldinyan again.",
     role: "Freelancer",
     star: 5,
   },

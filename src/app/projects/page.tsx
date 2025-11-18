@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Check } from "lucide-react";
+import { ArrowLeft, Check, Funnel, SlidersHorizontal } from "lucide-react";
 
 type Tag =
   | "TypeScript"
@@ -47,6 +47,7 @@ type Projects = {
   demoLink: string;
 };
 export default function Home() {
+  const [showFilter, setShowFilter] = useState<boolean>(false);
   const [typeFilter, setTypeFilter] = useState<TypeFilter>({
     demo: false,
     openSource: false,
@@ -157,8 +158,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full min-h-screen bg-bg-black overflow-x-hidden bg-top-splash">
-        <div className="w-full pt-10  flex flex-col items-center justify-center ">
+      <div className="w-full min-h-screen bg-bg-black bg-fixed overflow-x-hidden bg-top-splash">
+        <div className="w-full pt-10 p-4  flex flex-col items-center justify-center ">
           <p className="text-text-third text-3xl font-bold">My Projects</p>
           <p className="text-text-primary text-center font-light text-sm pt-5 px-4">
             Here you can find a collection of my public/open-source projects.
@@ -173,90 +174,101 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-8 px-4">
-          <p className="text-text-third font-semibold mb-2">Project Type</p>
-          <div className="flex flex-col gap-2">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <div
-                onClick={() =>
-                  setTypeFilter((prev) => ({ ...prev, demo: !prev.demo }))
-                }
-                className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
-                  typeFilter.demo
-                    ? "bg-text-secondary text-black"
-                    : "bg-bg-black border-border-bg"
-                }`}
-              >
-                {typeFilter.demo && <Check className="" />}
-              </div>
-              <span className="text-text-primary text-sm">Has Demo</span>
-            </label>
-
-            <label className="flex items-center gap-2 cursor-pointer">
-              <div
-                onClick={() =>
-                  setTypeFilter((prev) => ({
-                    ...prev,
-                    openSource: !prev.openSource,
-                  }))
-                }
-                className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
-                  typeFilter.openSource
-                    ? "bg-text-secondary text-black"
-                    : "bg-bg-black border-border-bg"
-                }`}
-              >
-                {typeFilter.openSource && <Check className="" />}
-              </div>
-              <span className="text-text-primary text-sm">Open Source</span>
-            </label>
-          </div>
-        </div>
-
-        <div>
-          {Tags.map((tag) => (
-            <div key={tag} className="" onClick={() => toggle(tag)}>
-              <p
-                className={` ${
-                  tagsFilter.includes(tag) ? " bg-green-500" : "bg-island-bg"
-                }`}
-              >
-                {tag}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <select
-            defaultValue="Newest First"
-            onChange={(e) => setSort(e.target.value as Sort)}
+        <div className="bg-bg-black md:hidden flex w-[80%] mx-auto rounded-xl border-border-bg border-2 ">
+          <div
+            onClick={() => setShowFilter((prev) => !prev)}
+            className="w-[90%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-bg border-2 "
           >
-            {sortValues.map((value) => (
-              <option key={value} value={value}>
-                {value}
-              </option>
+            <Funnel className="ml-2 mr-2 text-white w-4 h-4" />
+            <p className="text-white">Filters</p>
+            <SlidersHorizontal className="ml-auto mr-2 text-white w-5 h-5" />
+          </div>
+          {showFilter && <div>
+          <div className="mt-8 px-4">
+            <p className="text-text-third font-semibold mb-2">Project Type</p>
+            <div className="flex flex-col gap-2">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <div
+                  onClick={() =>
+                    setTypeFilter((prev) => ({ ...prev, demo: !prev.demo }))
+                  }
+                  className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
+                    typeFilter.demo
+                      ? "bg-text-secondary text-black"
+                      : "bg-bg-black border-border-bg"
+                  }`}
+                >
+                  {typeFilter.demo && <Check className="" />}
+                </div>
+                <span className="text-text-primary text-sm">Has Demo</span>
+              </label>
+
+              <label className="flex items-center gap-2 cursor-pointer">
+                <div
+                  onClick={() =>
+                    setTypeFilter((prev) => ({
+                      ...prev,
+                      openSource: !prev.openSource,
+                    }))
+                  }
+                  className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
+                    typeFilter.openSource
+                      ? "bg-text-secondary text-black"
+                      : "bg-bg-black border-border-bg"
+                  }`}
+                >
+                  {typeFilter.openSource && <Check className="" />}
+                </div>
+                <span className="text-text-primary text-sm">Open Source</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            {Tags.map((tag) => (
+              <div key={tag} className="" onClick={() => toggle(tag)}>
+                <p
+                  className={` ${
+                    tagsFilter.includes(tag) ? " bg-green-500" : "bg-island-bg"
+                  }`}
+                >
+                  {tag}
+                </p>
+              </div>
             ))}
-          </select>
+          </div>
+
+          <div>
+            <select
+              defaultValue="Newest First"
+              onChange={(e) => setSort(e.target.value as Sort)}
+            >
+              {sortValues.map((value) => (
+                <option key={value} value={value}>
+                  {value}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div> }
         </div>
 
         <div className="p-4">
-              <div className="grid md:grid-cols-2 mx-10 gap-4">
+          <div className="grid md:grid-cols-2 mx-10 gap-4">
             {filProjects.map((project, i) => {
-                return(
-                    <div className="bg-card-bg w-full border border-border-bg rounded-2xl" key={i}>
-                        <img src={project.img} className="" />
-                        <p>{project.title}</p>
-                    </div>
-                )
+              return (
+                <div
+                  className="bg-card-bg w-full border border-border-bg rounded-2xl"
+                  key={i}
+                >
+                  <img src={project.img} className="" />
+                  <p>{project.title}</p>
+                </div>
+              );
             })}
-        </div> 
+          </div>
         </div>
       </div>
     </>
   );
 }
-
-
- 
-
