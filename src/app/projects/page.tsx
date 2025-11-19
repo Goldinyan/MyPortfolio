@@ -162,7 +162,7 @@ export default function Home() {
       <div className="w-full min-h-screen bg-bg-black bg-fixed overflow-x-hidden bg-top-splash">
         <div className="w-full pt-10 p-4  flex flex-col items-center justify-center ">
           <p className="text-text-third text-3xl font-bold">My Projects</p>
-          <p className="text-text-primary text-center font-light text-sm pt-5 px-4">
+          <p className="text-text-primary w-[60%] text-center font-light text-sm pt-5 px-4">
             Here you can find a collection of my public/open-source projects.
             Feel free to explore and check them out!
           </p>
@@ -175,18 +175,19 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-bg-black md:hidden flex-col flex w-[80%] mx-auto rounded-xl border-border-bg border-2 ">
+        <div className="bg-bg-black mt-2 md:hidden flex-col flex w-[85%] mx-auto rounded-xl border-border-light border-1 ">
           <div
             onClick={() => setShowFilter((prev) => !prev)}
-            className="w-[90%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-bg border-2 "
+            className="w-[95%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-light border-1 "
           >
             <Funnel className="ml-2 mr-2 text-white w-4 h-4" />
             <p className="text-white">Filters</p>
+            <p>{filProjects.length !== projects.length ? filProjects.length : ""}</p>
             <SlidersHorizontal className="ml-auto mr-2 text-white w-5 h-5" />
           </div>
           {showFilter && (
             <div className="mx-auto w-[90%]">
-              <div className="mt-4 ">
+              <div className="mt-1 ">
                 <div className="flex items-center gap-2 flex-row">
                   <Funnel className=" h-4 w-4 mb-2 text-text-primary" />
                   <p className="text-text-third font-medium text-sm mb-2">
