@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Check, Funnel, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, Check, Funnel, SlidersHorizontal, Cpu } from "lucide-react";
 
 type Tag =
   | "TypeScript"
@@ -47,6 +47,7 @@ type Projects = {
   demoLink: string;
 };
 export default function Home() {
+  const [selectOpen, setSelectOpen] = useState<boolean>(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
   const [typeFilter, setTypeFilter] = useState<TypeFilter>({
     demo: false,
@@ -174,7 +175,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-bg-black md:hidden flex w-[80%] mx-auto rounded-xl border-border-bg border-2 ">
+        <div className="bg-bg-black md:hidden flex-col flex w-[80%] mx-auto rounded-xl border-border-bg border-2 ">
           <div
             onClick={() => setShowFilter((prev) => !prev)}
             className="w-[90%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-bg border-2 "
@@ -183,74 +184,93 @@ export default function Home() {
             <p className="text-white">Filters</p>
             <SlidersHorizontal className="ml-auto mr-2 text-white w-5 h-5" />
           </div>
-          {showFilter && <div>
-          <div className="mt-8 px-4">
-            <p className="text-text-third font-semibold mb-2">Project Type</p>
-            <div className="flex flex-col gap-2">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <div
-                  onClick={() =>
-                    setTypeFilter((prev) => ({ ...prev, demo: !prev.demo }))
-                  }
-                  className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
-                    typeFilter.demo
-                      ? "bg-text-secondary text-black"
-                      : "bg-bg-black border-border-bg"
-                  }`}
-                >
-                  {typeFilter.demo && <Check className="" />}
+          {showFilter && (
+            <div className="mx-auto w-[90%]">
+              <div className="mt-4 ">
+                <div className="flex items-center gap-2 flex-row">
+                  <Funnel className=" h-4 w-4 mb-2 text-text-primary" />
+                  <p className="text-text-third font-medium text-sm mb-2">
+                    Project Type
+                  </p>
                 </div>
-                <span className="text-text-primary text-sm">Has Demo</span>
-              </label>
+                <div className="flex flex-col gap-2">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <div
+                      onClick={() =>
+                        setTypeFilter((prev) => ({ ...prev, demo: !prev.demo }))
+                      }
+                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${
+                        typeFilter.demo
+                          ? "bg-text-secondary text-black"
+                          : "bg-bg-black border-border-bg"
+                      }`}
+                    >
+                      {typeFilter.demo && <Check className="" />}
+                    </div>
+                    <span className="text-text-primary text-sm">Has Demo</span>
+                  </label>
 
-              <label className="flex items-center gap-2 cursor-pointer">
-                <div
-                  onClick={() =>
-                    setTypeFilter((prev) => ({
-                      ...prev,
-                      openSource: !prev.openSource,
-                    }))
-                  }
-                  className={`w-5 h-5 flex items-center justify-center border rounded-sm ${
-                    typeFilter.openSource
-                      ? "bg-text-secondary text-black"
-                      : "bg-bg-black border-border-bg"
-                  }`}
-                >
-                  {typeFilter.openSource && <Check className="" />}
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <div
+                      onClick={() =>
+                        setTypeFilter((prev) => ({
+                          ...prev,
+                          openSource: !prev.openSource,
+                        }))
+                      }
+                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${
+                        typeFilter.openSource
+                          ? "bg-text-secondary text-black"
+                          : "bg-bg-black border-border-bg"
+                      }`}
+                    >
+                      {typeFilter.openSource && <Check className="" />}
+                    </div>
+                    <span className="text-text-primary text-sm">
+                      Open Source
+                    </span>
+                  </label>
                 </div>
-                <span className="text-text-primary text-sm">Open Source</span>
-              </label>
-            </div>
-          </div>
-
-          <div>
-            {Tags.map((tag) => (
-              <div key={tag} className="" onClick={() => toggle(tag)}>
-                <p
-                  className={` ${
-                    tagsFilter.includes(tag) ? " bg-green-500" : "bg-island-bg"
-                  }`}
-                >
-                  {tag}
-                </p>
               </div>
-            ))}
-          </div>
 
-          <div>
-            <select
-              defaultValue="Newest First"
-              onChange={(e) => setSort(e.target.value as Sort)}
-            >
-              {sortValues.map((value) => (
-                <option key={value} value={value}>
-                  {value}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div> }
+              <div className="flex mt-4 items-center gap-2 flex-row">
+                <Cpu className="text-text-primary h-4 w-4 " />
+                <p className=" text-text-third font-medium text-sm ">Technologies</p>
+              </div>
+
+              <div className="mt-2 flex flex-wrap gap-2 text-text-primary  mx-auto">
+                {Tags.map((tag) => (
+                  <div key={tag} className="hover:brightness-90" onClick={() => toggle(tag)}>
+                    <p
+                      className={`text-sm px-2 rounded-lg font-medium ${
+                        tagsFilter.includes(tag)
+                          ? " bg-text-secondary text-black"
+                          : "bg-island-bg"
+                      }`}
+                    >
+                      {tag}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-4">
+                <div
+                  defaultValue="Newest First"
+                  className="w-full px-3 py-2 rounded-lg bg-island-bg text-text-primary border border-border-bg focus:outline-none focus:ring-2 focus:ring-text-secondary hover:bg-opacity-80 transition-all"
+                >
+                  {selectOpen && <div>
+                  {sortValues.map((value) => (
+                    <div key={value} >
+                      <p onClick={() => setSort(value)}>{value}</p>
+                    </div>
+                  ))}
+                  </div>
+                  }
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="p-4">
