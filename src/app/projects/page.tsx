@@ -2,7 +2,16 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Check, Funnel, SlidersHorizontal, Cpu } from "lucide-react";
+import {
+  ArrowLeft,
+  Check,
+  Funnel,
+  SlidersHorizontal,
+  Cpu,
+  ArrowUpNarrowWide,
+  ArrowBigDown,
+  ArrowDown,
+} from "lucide-react";
 
 type Tag =
   | "TypeScript"
@@ -159,7 +168,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="w-full min-h-screen bg-bg-black bg-fixed overflow-x-hidden bg-top-splash">
+      <div className="w-full min-h-screen  bg-bg-black bg-fixed overflow-x-hidden bg-top-splash">
         <div className="w-full pt-10 p-4  flex flex-col items-center justify-center ">
           <p className="text-text-third text-3xl font-bold">My Projects</p>
           <p className="text-text-primary w-[60%] text-center font-light text-sm pt-5 px-4">
@@ -175,19 +184,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-bg-black mt-2 md:hidden flex-col flex w-[85%] mx-auto rounded-xl border-border-light border-1 ">
+        <div className="bg-bg-black mt-2 h-200 md:hidden flex-col flex w-[85%] mx-auto rounded-xl border-border-light border-1 ">
           <div
             onClick={() => setShowFilter((prev) => !prev)}
             className="w-[95%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-light border-1 "
           >
             <Funnel className="ml-2 mr-2 text-white w-4 h-4" />
             <p className="text-white">Filters</p>
-            <p>{filProjects.length !== projects.length ? filProjects.length : ""}</p>
+            <p>
+              {filProjects.length !== projects.length ? filProjects.length : ""}
+            </p>
             <SlidersHorizontal className="ml-auto mr-2 text-white w-5 h-5" />
           </div>
           {showFilter && (
-            <div className="mx-auto w-[90%]">
-              <div className="mt-1 ">
+            <div className="mx-auto w-[95%]">
+              <div className="mt-1 ml-1 ">
                 <div className="flex items-center gap-2 flex-row">
                   <Funnel className=" h-4 w-4 mb-2 text-text-primary" />
                   <p className="text-text-third font-medium text-sm mb-2">
@@ -234,14 +245,20 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex mt-4 items-center gap-2 flex-row">
+              <div className="flex ml-1 mt-4 items-center gap-2 flex-row">
                 <Cpu className="text-text-primary h-4 w-4 " />
-                <p className=" text-text-third font-medium text-sm ">Technologies</p>
+                <p className=" text-text-third font-medium text-sm ">
+                  Technologies
+                </p>
               </div>
 
-              <div className="mt-2 flex flex-wrap gap-2 text-text-primary  mx-auto">
+              <div className="mt-2 ml-1 flex flex-wrap gap-2 text-text-primary  mx-auto">
                 {Tags.map((tag) => (
-                  <div key={tag} className="hover:brightness-90" onClick={() => toggle(tag)}>
+                  <div
+                    key={tag}
+                    className="hover:brightness-90"
+                    onClick={() => toggle(tag)}
+                  >
                     <p
                       className={`text-sm px-2 rounded-lg font-medium ${
                         tagsFilter.includes(tag)
@@ -255,19 +272,33 @@ export default function Home() {
                 ))}
               </div>
 
+              <div className="flex mt-4 items-center gap-2 flex-row">
+                <ArrowUpNarrowWide className="text-text-primary h-4 w-4 " />
+                <p className=" text-text-third font-medium text-sm ">Sort By</p>
+              </div>
+
               <div className="mt-4">
-                <div
-                  defaultValue="Newest First"
-                  className="w-full px-3 py-2 rounded-lg bg-island-bg text-text-primary border border-border-bg focus:outline-none focus:ring-2 focus:ring-text-secondary hover:bg-opacity-80 transition-all"
-                >
-                  {selectOpen && <div>
-                  {sortValues.map((value) => (
-                    <div key={value} >
-                      <p onClick={() => setSort(value)}>{value}</p>
-                    </div>
-                  ))}
+                <div className="relative bg-bg-black md:hidden p-3 hover:bg-island-bg items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-light border-1">
+                  <div
+                    className="flex flex-row justify-between w-full cursor-pointer"
+                    onClick={() => setSelectOpen(!selectOpen)}
+                  >
+                    <p className="text-white text-xs">{sort}</p>
+                    <ArrowDown className="text-text-primary h-4 w-4 ml-1" />
                   </div>
-                  }
+                  {selectOpen && (
+                    <div className="absolute left-0 top-full mt-2 w-full bg-bg-black rounded-xl border border-border-light">
+                      {sortValues.map((value) => (
+                        <div
+                          key={value}
+                          className="px-3 py-2 hover:bg-island-bg cursor-pointer"
+                          onClick={() => setSort(value)}
+                        >
+                          <p className="text-white text-sm">{value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

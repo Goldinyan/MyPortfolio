@@ -9,6 +9,7 @@
   --breakpoint-xl: 1900px;
 
   --color-orange-500: #ffa500; 
+  --text-xxs: 0.65rem;
 }
 
 @theme {
