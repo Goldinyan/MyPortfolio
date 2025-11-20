@@ -10,6 +10,8 @@
 
   --color-orange-500: #ffa500; 
   --text-xxs: 0.65rem;
+  --text-sm2: 1rem;
+  --text-md: 1.2rem;
 }
 
 @theme {
