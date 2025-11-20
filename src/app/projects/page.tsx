@@ -15,26 +15,18 @@ import {
   RotateCcw,
   X,
 } from "lucide-react";
-
+import ProjectCard from "./projectCard";
 import useMediaQuery from "../mediaQuery";
 
-type Tag =
-  | "TypeScript"
-  | "MySQL"
-  | "Next.js"
-  | "Node.js"
-  | "Firebase"
-  | "ShadCN/UI"
-  | "Tailwind"
-  | "Flowbite"
-  | "Daisy";
+type Tag = typeof Tags[number];
+
 
 type TypeFilter = {
   demo: boolean;
   openSource: boolean;
 };
 
-const Tags: Tag[] = [
+const Tags = [
   "TypeScript",
   "Daisy",
   "Firebase",
@@ -44,22 +36,22 @@ const Tags: Tag[] = [
   "ShadCN/UI",
   "Flowbite",
   "Tailwind",
-];
+] as const;
 
 const sortValues = ["Newest First", "A-Z", "Z-A"] as const;
 type Sort = (typeof sortValues)[number];
-type Projects = {
+interface Project {
   title: string;
-  feautured: boolean;
+  featured: boolean;   
   tags: Tag[];
-  des: string;
+  description: string; 
   date: Date;
   img: string;
-  openSoure: boolean;
+  openSource: boolean; 
   hasDemo: boolean;
   sourceLink: string;
-  demoLink: string;
-};
+  demoLink: string
+}
 export default function Home() {
   const [selectOpen, setSelectOpen] = useState<boolean>(false);
   const [showFilter, setShowFilter] = useState<boolean>(false);
@@ -69,11 +61,11 @@ export default function Home() {
   });
   const [tagsFilter, setTagsFilter] = useState<Tag[]>([]);
   const [sort, setSort] = useState<Sort>("Newest First");
-  const [filProjects, setFilProjects] = useState<Projects[]>([]);
-  const projects: Projects[] = [
+  const [filProjects, setFilProjects] = useState<Project[]>([]);
+  const projects: Project[] = [
     {
       title: "Coding Kids Niederhein",
-      feautured: false,
+      featured: false,
       tags: [
         "TypeScript",
         "Tailwind",
@@ -82,17 +74,17 @@ export default function Home() {
         "Node.js",
         "ShadCN/UI",
       ],
-      des: "ds",
+      description: "ds",
       date: new Date("2025-08-16"),
       img: "./assets/pg1.png",
-      openSoure: false,
+      openSource: false,
       hasDemo: true,
       sourceLink: "",
       demoLink: "",
     },
     {
       title: "Coding Kids Niederhein",
-      feautured: false,
+      featured: false,
       tags: [
         "TypeScript",
         "Tailwind",
@@ -101,17 +93,17 @@ export default function Home() {
         "Node.js",
         "ShadCN/UI",
       ],
-      des: "ds",
+      description: "ds",
       date: new Date("2025-08-16"),
       img: "./assets/pg1.png",
-      openSoure: false,
+      openSource: false,
       hasDemo: true,
       sourceLink: "",
       demoLink: "",
     },
     {
       title: "Coding Kids Niederhein",
-      feautured: false,
+      featured: false,
       tags: [
         "TypeScript",
         "Tailwind",
@@ -120,10 +112,10 @@ export default function Home() {
         "Node.js",
         "ShadCN/UI",
       ],
-      des: "ds",
+      description: "ds",
       date: new Date("2025-08-16"),
       img: "./assets/pg1.png",
-      openSoure: false,
+      openSource: false,
       hasDemo: true,
       sourceLink: "",
       demoLink: "",
@@ -164,7 +156,7 @@ export default function Home() {
     }
 
     if (typeFilter.openSource) {
-      sortedProjects = sortedProjects.filter((project) => project.openSoure);
+      sortedProjects = sortedProjects.filter((project) => project.openSource);
     }
 
     if (tagsFilter.length !== 0) {
@@ -216,7 +208,7 @@ export default function Home() {
             <SlidersHorizontal className="ml-auto mr-2 text-white w-5 h-5" />
           </div>
           {showFilter && (
-            <div className="mx-auto w-[95%] gap-5 space-y-4 grid grid-cols-1 md:grid-cols-2 l:grid-cols-4">
+            <div className="mx-auto w-[95%] gap-5 grid grid-cols-1 md:grid-cols-2 l:grid-cols-4">
              
               {/* <div className="flex md:flex-row gap-3"> */}
                 <div className="ml-1 max-w-100   ">
@@ -426,8 +418,7 @@ export default function Home() {
                   className="bg-card-bg w-full border border-border-bg rounded-2xl"
                   key={i}
                 >
-                  <img src={project.img} className="" />
-                  <p>{project.title}</p>
+                  <ProjectCard project={project} />
                 </div>
               );
             })}
