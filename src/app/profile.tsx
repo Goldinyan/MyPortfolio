@@ -26,15 +26,16 @@ export const traits = [
 export default function Profile() {
   return (
     <div className="w-full  border-2  rounded-2xl bg-card-bg border-border-bg  ">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-5">
         <img
           alt="Profile Picture"
           src="./assets/bgFunny.jpg"
           className="h-25 rounded-2xl ml-[5%] mt-5 object-cover"
         />
-        <div className="flex flex-col">
-          <p className="text-2xl font-bold text-text-secondary">Goldinyan</p>
-          <p className="text-white break-normal w-40 sm:w-60 text-xl-plus">
+        <div className="flex flex-col ">
+          <p className="text-green-600 bg-green-950 text-center mt-3 hover:bg-island-bg rounded-2xl w-35 text-sm">Availabe To Work</p>
+          <p className="text-2xl font-bold text-text-secondary pt-1">Goldinyan</p>
+          <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
             I'm a{" "}
             <span className="text-text-secondary">Full Stack Developer</span>
           </p>

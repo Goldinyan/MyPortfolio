@@ -4,7 +4,7 @@ import Services from "./services";
 import LittleStuff from "./littleStuff";
 import WorkTogether from "./workTogether";
 import Projects from "./projects";
-import TechStack from "./techStack";
+import TechStack from "./webTechStack";
 import Testimonials from "./testimonials";
 
 export default function Home() {

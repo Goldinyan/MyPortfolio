@@ -7,17 +7,11 @@ export default function WorkTogether() {
   const items: { text: string; icon: React.ReactNode }[] = [
     {
       text: "Contact me via Email",
-      icon: <Mail className="h-5" style={{ color: "#5865F2" }} />,
+      icon: <Mail className="h-5" style={{ color: "#a7c7ff" }} />,
     },
     {
       text: "Check out my Github",
-      icon: <Github className="h-5" style={{ color: "#5865F2" }} />,
-    },
-    {
-      text: "Message me on Discord",
-      icon: (
-        <img src={"discord.svg"} className="h-5" style={{ color: "#5865F2" }} />
-      ),
+      icon: <Github className="h-5" style={{ color: "#a7c7ff" }} />,
     },
   ];
 
@@ -33,7 +27,7 @@ export default function WorkTogether() {
           <p className="font-medium text-text-primary">
             and make your ideas come to{" "}
             <ReactTyped
-              strings={["life", "reality", "existence"]}
+              strings={["life", "reality", "existence", "creation", "code", "products"]}
               typeSpeed={60}
               backSpeed={70}
               loop
@@ -51,6 +45,8 @@ export default function WorkTogether() {
                     if (item.text.includes("Email")) {
                       window.location.href =
                         "mailto:seifert.ansgar@example.com";
+                    } else {
+                      window.location.href = "https://github.com/Goldinyan"
                     }
                   }}
                   className="relative flex flex-col items-center "
