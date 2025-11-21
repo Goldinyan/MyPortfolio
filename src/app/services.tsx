@@ -23,7 +23,7 @@ export default function Servies() {
       </div>
 
       <div
-        className="flex flex-col gap-4 w-full p-3 "
+        className="flex  flex-col gap-4 w-full p-3 "
         style={{
           backgroundColor: "var(--background)",
           borderRadius: "var(--radius)",
@@ -34,7 +34,7 @@ export default function Servies() {
             {stuff.map((item, i) => (
               <div
                 key={`original-${i}`}
-                className="inline-block  bg-small-card-bg font-bold text-text-secondary text-md  px-4 py-2 rounded-xl whitespace-nowrap"
+                className="inline-block  bg-small-card-bg font-semibold text-text-secondary text-md  px-4 py-2 rounded-xl whitespace-nowrap"
               >
                 {item}
               </div>
@@ -42,7 +42,7 @@ export default function Servies() {
             {stuff.map((item, i) => (
               <div
                 key={`duplicate-${i}`}
-                className="inline-block text-text-secondary text-md font-bold bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+                className="inline-block text-text-secondary text-md font-semibold bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
               >
                 {item}
               </div>
@@ -50,12 +50,12 @@ export default function Servies() {
           </div>
         </div>
 
-        <div className="fade-mask h-10 w-full">
+        <div className="fade-mask h-10 w-full ">
           <div className="scrolling-container-reverse">
             {stuff.map((item, i) => (
               <div
                 key={`reverse-original-${i}`}
-                className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+                className="inline-block font-semibold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
               >
                 {item}
               </div>
@@ -63,7 +63,7 @@ export default function Servies() {
             {stuff.map((item, i) => (
               <div
                 key={`reverse-duplicate-${i}`}
-                className="inline-block font-bold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
+                className="inline-block font-semibold text-text-secondary text-md bg-small-card-bg px-4 py-2 rounded-xl whitespace-nowrap"
               >
                 {item}
               </div>

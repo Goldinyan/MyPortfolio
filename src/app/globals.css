@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
+
 @theme {
   --breakpoint-*: initial; 
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 976px;
   --breakpoint-l: 1200px;
+  --breakpoint-x: 1450px;
   --breakpoint-xl: 1900px;
 
   --color-orange-500: #ffa500; 
@@ -13,6 +15,7 @@
   --text-sm2: 1rem;
   --text-md: 1.2rem;
 }
+
 
 @theme {
   --color-bg-black: #0e0c0d;
@@ -29,28 +32,25 @@
   --color-custom-gray-2: #464547;
 }
 
-.marquee {
-  display: inline-block;
-  white-space: nowrap;  
-  animation: scroll-left 5s linear infinite;
-  transform: translateX(100%); 
-  will-change: transform;
-}
 
-.bg-top-splash {
-  background-color: #0e0c0d; /* dein dunkler Hintergrund */
-  background-image:
-    radial-gradient(circle at 15% 25%, rgba(167, 199, 255, 0.12) 0%, transparent 18%),
-    radial-gradient(circle at 70% 15%, rgba(167, 199, 255, 0.10) 0%, transparent 22%),
-    radial-gradient(circle at 40% 40%, rgba(167, 199, 255, 0.08) 0%, transparent 20%),
-    radial-gradient(circle at 85% 35%, rgba(167, 199, 255, 0.06) 0%, transparent 18%),
-    radial-gradient(circle at 30% 60%, rgba(167, 199, 255, 0.07) 0%, transparent 25%);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+
+body {
+  font-family: var(--font-chillax);
 }
 
 
+@font-face {
+  font-family: "Chillax";
+  src: url("/fonts/Chillax-Variable.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+
+@theme {
+  --font-chillax: "Chillax", sans-serif;
+}
 
 
 html, body {
@@ -140,5 +140,23 @@ html, body {
 }
 
 
+.marquee {
+  display: inline-block;
+  white-space: nowrap;  
+  animation: scroll-left 5s linear infinite;
+  transform: translateX(100%); 
+  will-change: transform;
+}
 
+.bg-top-splash {
+  background-color: #0e0c0d; 
+  background-image:
+    radial-gradient(circle at 15% 25%, rgba(167, 199, 255, 0.12) 0%, transparent 18%),
+    radial-gradient(circle at 70% 15%, rgba(167, 199, 255, 0.10) 0%, transparent 22%),
+    radial-gradient(circle at 40% 40%, rgba(167, 199, 255, 0.08) 0%, transparent 20%),
+    radial-gradient(circle at 85% 35%, rgba(167, 199, 255, 0.06) 0%, transparent 18%),
+    radial-gradient(circle at 30% 60%, rgba(167, 199, 255, 0.07) 0%, transparent 25%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 

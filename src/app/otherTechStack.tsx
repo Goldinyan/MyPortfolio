@@ -57,7 +57,7 @@ export default function OtherTechStack() {
       <div className="flex flex-col p-5">
         <p className="text-white text-3xl">Beyond the Web</p>
         <p className="text-custom-gray-2 text-1 pt-1 ">
-          Technologies I explore outside the web stack:
+          Technologies I explore outside the web stack
 
 
         </p>

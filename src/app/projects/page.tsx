@@ -26,7 +26,7 @@ type TypeFilter = {
   openSource: boolean;
 };
 
-const Tags = [
+export const Tags = [
   "TypeScript",
   "Daisy",
   "Firebase",
@@ -192,7 +192,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-bg-black max-w-350 mt-6 flex flex-col  w-[85%] mx-auto rounded-xl border-border-light border-1">
+        <div className="bg-bg-black max-w-350 mt-6 flex flex-col l:h-48  w-[85%] mx-auto rounded-xl border-border-light border-1">
           <div
             onClick={() => setShowFilter((prev) => !prev)}
             className="w-[95%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-light border-1 "
@@ -402,17 +402,17 @@ export default function Home() {
                   </div>
                 </div>
               
-              {/* </div> */}
+              
             </div>
           )}
         </div>
 
         <div className="mt-5">
-          <div className="grid md:grid-cols-2 mx-10 gap-4">
+          <div className="grid md:grid-cols-2 x:grid-cols-3 w-[85%] max-w-350 mx-auto gap-4">
             {filProjects.map((project, i) => {
               return (
                 <div
-                  className="w-full"
+                  className="w-full md:max-w-140 lg:max-w-170"
                   key={i}
                 >
                   <ProjectCard project={project} />

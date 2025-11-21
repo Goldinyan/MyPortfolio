@@ -34,7 +34,7 @@ export default function Profile() {
         />
         <div className="flex flex-col ">
           <p className="text-green-600 bg-green-950 text-center mt-3 hover:bg-island-bg rounded-2xl w-35 text-sm">Availabe To Work</p>
-          <p className="text-2xl font-bold text-text-secondary pt-1">Goldinyan</p>
+          <p className="text-2xl font-stardom text-text-secondary pt-1">Goldinyan xxX</p>
           <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
             I'm a{" "}
             <span className="text-text-secondary">Full Stack Developer</span>
