@@ -160,9 +160,9 @@ export default function Home() {
           </p>
           <div
             onClick={() => router.push("/")}
-            className="flex flex-row gap-2 text-black bg-text-secondary mt-4 px-3 py-2 font-medium rounded-lg "
+            className="flex group flex-row gap-2 text-black bg-text-secondary mt-4 px-4 py-2 font-medium rounded-lg "
           >
-            <ArrowLeft />
+            <ArrowLeft className="group-hover:-translate-x-2 transition-all duration-150" />
             <p>Back to Home</p>
           </div>
         </div>
