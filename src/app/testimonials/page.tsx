@@ -30,9 +30,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 l:grid-cols-3 pt-10 md:mx-20 l:mx-30 xl:w-[60%] xl:mx-auto">
             {testimonials.map((testimonial, index) => (
               <TiltCard key={index}>
-                <div
-                  key={index}
-                >
+                <div key={index}>
                   <div className="mt-auto flex flex-row justify-between items-center">
                     <div className="flex-col">
                       <p className="text-white font-medium">
@@ -72,7 +70,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-text-secondary text-sm italic mb-4 pt-2">
-                    "{testimonial.feedback}"
+                    &quot;{testimonial.feedback}&quot;
                   </p>
                 </div>
               </TiltCard>

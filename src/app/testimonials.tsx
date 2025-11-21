@@ -26,7 +26,6 @@ export const testimonials = [
 ];
 
 export default function Testimonials() {
-
   const router = useRouter();
 
   return (
@@ -75,21 +74,24 @@ export default function Testimonials() {
               </div>
             </div>
 
-            <p className="text-text-secondary italic mb-4 pt-2">
-              "{testimonial.feedback}"
+            <p className="text-text-secondary text-sm italic mb-4 pt-2">
+              &quot;{testimonial.feedback}&quot;
             </p>
           </div>
         ))}
       </div>
       <div className="absolute bottom-0 left-0 w-full h-50 bg-gradient-to-t from-card-bg to-transparent pointer-events-none" />
 
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 
+      <div
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 
                 bg-text-secondary rounded-lg border border-border-bg 
                 transition-transform font-medium text-black text-center 
-                px-4 whitespace-nowrap py-2 mb-4 hover:scale-110 cursor-pointer">
-  <p onClick={() => router.push('/testimonials')}>View All Testimonials</p>
-</div>
-
+                px-4 whitespace-nowrap py-2 mb-4 hover:scale-110 cursor-pointer"
+      >
+        <p onClick={() => router.push("/testimonials")}>
+          View All Testimonials
+        </p>
+      </div>
     </div>
   );
 }
