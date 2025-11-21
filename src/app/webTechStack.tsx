@@ -117,7 +117,7 @@ export default function WebTechStack() {
   return (
     <div className="w-full  border-2  rounded-2xl bg-card-bg border-border-bg  ">
       <div className="flex flex-col p-5">
-        <p className="text-white text-3xl">My Web Tech Stack</p>
+        <p className="text-white text-3xl">My Tech Stack</p>
         <p className="text-custom-gray-2 text-1 pt-1 ">
           Here are some of the technologies I work with
         </p>

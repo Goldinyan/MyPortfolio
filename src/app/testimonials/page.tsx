@@ -78,7 +78,7 @@ export default function Home() {
           </div>
           <div className="w-[70%] mx-auto pt-10">
             <p className="text-text-primary font-extralight text-center  ">
-              These Testimonials were NOT writing by me, no I could never, lol.{" "}
+              These Testimonials were NOT written by me, no I could never, lol.{" "}
             </p>
           </div>
         </div>
