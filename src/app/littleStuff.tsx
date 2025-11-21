@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, Folder, Users, Star } from "lucide-react";
+import {Folder, Users, Star } from "lucide-react";
 import { JSX } from "react";
 
 const items: { title: string, des: string, icon: JSX.Element }[] = [

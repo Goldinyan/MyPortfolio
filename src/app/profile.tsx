@@ -1,7 +1,6 @@
 "use client";
 
 import "./globals.css";
-import { useState, useEffect } from "react";
 import {
   Globe,
   Languages,
@@ -9,9 +8,9 @@ import {
   Printer,
   User,
   GraduationCap,
-  Gamepad,
+  
 } from "lucide-react";
-import { Github, Mailbox, Mail, FileText, UserPlus, Omega } from "lucide-react";
+import { Github, Mail, Omega } from "lucide-react";
 
 export const traits = [
   { text: "German & English", icon: Languages },
@@ -37,7 +36,7 @@ export default function Profile() {
             Availabe To Work
           </p>
           <p className="text-2xl font-stardom text-text-secondary pt-1">
-            Goldinyan xxX
+            Goldinyan
           </p>
           <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
             I'm a{" "}
@@ -57,8 +56,13 @@ export default function Profile() {
           </div>
         ))}
       </div>
-      <div  className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
-        <div    onClick={() => window.open("mailto:seifert.ansgar@gmail.com", "_blank")} className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-1 justify-center flex bg-text-secondary">
+      <div className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
+        <div
+          onClick={() =>
+            window.open("mailto:seifert.ansgar@gmail.com", "_blank")
+          }
+          className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-1 justify-center flex bg-text-secondary"
+        >
           <Mail className="h-5 " />
           <p>Hire me</p>
         </div>

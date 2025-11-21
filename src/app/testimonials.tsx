@@ -75,7 +75,7 @@ export default function Testimonials() {
             </div>
 
             <p className="text-text-secondary text-sm italic mb-4 pt-2">
-              &quot;{testimonial.feedback}&quot;
+             {`"${testimonial.feedback}"`} 
             </p>
           </div>
         ))}

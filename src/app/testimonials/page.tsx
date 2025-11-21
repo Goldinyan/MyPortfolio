@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Check } from "lucide-react";
 import { testimonials } from "../testimonials";
@@ -70,7 +70,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-text-secondary text-sm italic mb-4 pt-2">
-                    &quot;{testimonial.feedback}&quot;
+                   {`"${testimonial.feedback}"`}  
                   </p>
                 </div>
               </TiltCard>

@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ExternalLink, Code, Star, BicepsFlexed } from "lucide-react";
 
 type Tag =
@@ -75,6 +74,7 @@ export default function ProjectCard({
           <img
             src={img}
             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+            alt="Project Image"
           />
         </div>
 
