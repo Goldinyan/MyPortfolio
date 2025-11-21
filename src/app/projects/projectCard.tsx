@@ -84,7 +84,7 @@ export default function ProjectCard({
           {featured ? <div className="flex flex-row bg-text-secondary/30 px-2 rounded-xl border justify-center items-center border-text-secondary gap-3"><Star className="text-text-secondary h-5 w-5" /><p className="text-text-secondary ">Feautured</p></div> : ""}
           {workingOn ? <div className="flex flex-row bg-green-600/30 px-2 rounded-xl border justify-center items-center border-green-600 gap-3"><BicepsFlexed className="text-green-600 h-5 w-5" /><p className="text-green-600 ">Working On</p></div> : ""}
           </div>
-          <p className="text-text-primary text-sm font-light pt-2">{description}</p>
+          <p className="text-text-primary text-sm font-light pt-4">{description}</p>
 
           <div className="flex flex-wrap gap-2 pt-5 pb-5">
             {tags.map((tag, idx) => {

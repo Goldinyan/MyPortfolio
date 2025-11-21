@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function Projects() {
 
     const router = useRouter(); 
-    const stuff = ["./pg1.png", "./pg2.png", "./pg3.png"];
+    const stuff = ["./pg1.png", "./pg2.png", "./CodingKids.png"];
 
   return (
     <div className="w-full   border-2  rounded-2xl bg-card-bg border-border-bg  ">
@@ -27,7 +27,7 @@ export default function Projects() {
             {stuff.map((item, i) => (
               <div
                 key={i}
-                className="inline-block rounded-xl  w-70   whitespace-nowrap"
+                className="inline-block rounded-xl  w-80   whitespace-nowrap"
               >
                 <img
                   src={item}
@@ -39,7 +39,7 @@ export default function Projects() {
             {stuff.map((item, i) => (
               <div
                 key={i}
-                className="inline-block  w-70  rounded-xl whitespace-nowrap"
+                className="inline-block  w-80  rounded-xl whitespace-nowrap"
               >
                 <img
                   src={item}

@@ -66,7 +66,7 @@ export default function Home() {
   const [filProjects, setFilProjects] = useState<Project[]>([]);
   const projects: Project[] = [
     {
-      title: "Coding Kids Niederhein",
+      title: "Coding Kids",
       featured: false,
       tags: [
         "TypeScript",
@@ -76,13 +76,14 @@ export default function Home() {
         "Node.js",
         "ShadCN/UI",
       ],
-      description: "ds",
+      description:
+        "A web platform for organizing events and courses, featuring admin dashboards and streamlined management tools.",
       date: new Date("2025-08-16"),
-      img: "./pg1.png",
+      img: "./CodingKids.png",
       workingOn: true,
-      openSource: false,
-      hasDemo: true,
-      sourceLink: "",
+      openSource: true,
+      hasDemo: false,
+      sourceLink: "https://github.com/Goldinyan/CodingKidsWebsite",
       demoLink: "",
     },
   ];

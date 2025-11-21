@@ -3,55 +3,56 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function OtherTechStack() {
   const items: { text: string; pic: React.ReactNode; link?: string }[] = [
-    {
-      text: "Swift",
-      pic: (
-       <img
-          width="40"
-          height="40"
-          src="./swift.png"
-          alt="react"
-        />
-      ),
-      link: "https://nextjs.org/",
-    },
-    {
-        text: "Java",
-        pic: (
-       <img
-          width="40"
-          height="40"
-          src="./java.png"
-          alt="react"
-        />
-      ),
-      link: "https://nextjs.org/",
-    },
-     {
-        text: "C#",
-        pic: (
-       <img
-          width="40"
-          height="40"
-          src="./csharp.png"
-          alt="react"
-        />
-      ),
-      link: "https://nextjs.org/",
-    },
-     {
-        text: "Go",
-        pic: (
-        <img
-          width="40"
-          height="40"
-          src="./go.png"
-          alt="react"
-        />
-      ),
-      link: "https://nextjs.org/",
-    }
-  ];
+  {
+    text: "Swift",
+    pic: (
+      <img
+        width="40"
+        height="40"
+        src="./swift.png"
+        alt="swift"
+      />
+    ),
+    link: "https://swift.org/", 
+  },
+  {
+    text: "Java",
+    pic: (
+      <img
+        width="40"
+        height="40"
+        src="./java.png"
+        alt="java"
+      />
+    ),
+    link: "https://www.java.com/", 
+  },
+  {
+    text: "C#",
+    pic: (
+      <img
+        width="40"
+        height="40"
+        src="./csharp.png"
+        alt="csharp"
+      />
+    ),
+    link: "https://learn.microsoft.com/dotnet/csharp/", 
+  },
+  {
+    text: "Go",
+    pic: (
+      <img
+        width="40"
+        height="40"
+        src="./go.png"
+        alt="go"
+      />
+    ),
+    link: "https://go.dev/", 
+  },
+];
+
   return (
     <div className="w-full  border-2  rounded-2xl bg-card-bg border-border-bg  ">
       <div className="flex flex-col p-5">

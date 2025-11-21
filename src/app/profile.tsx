@@ -20,7 +20,7 @@ export const traits = [
   { text: "3D-Print Addict", icon: Printer },
   { text: "16y/o", icon: User },
   { text: "Student", icon: GraduationCap },
-  { text: "Philosopher", icon: Omega}
+  { text: "Philosopher", icon: Omega },
 ];
 
 export default function Profile() {
@@ -33,8 +33,12 @@ export default function Profile() {
           className="h-25 rounded-2xl ml-[5%] mt-5 object-cover"
         />
         <div className="flex flex-col ">
-          <p className="text-green-600 bg-green-950 text-center mt-3 hover:bg-island-bg rounded-2xl w-35 text-sm">Availabe To Work</p>
-          <p className="text-2xl font-stardom text-text-secondary pt-1">Goldinyan xxX</p>
+          <p className="text-green-600 bg-green-950 text-center mt-3 hover:bg-island-bg rounded-2xl w-35 text-sm">
+            Availabe To Work
+          </p>
+          <p className="text-2xl font-stardom text-text-secondary pt-1">
+            Goldinyan xxX
+          </p>
           <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
             I'm a{" "}
             <span className="text-text-secondary">Full Stack Developer</span>
@@ -53,12 +57,17 @@ export default function Profile() {
           </div>
         ))}
       </div>
-      <div className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
-        <div className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-1 justify-center flex bg-text-secondary">
+      <div  className="w-full pb-4 mx-auto mt-5 items-center justify-center flex gap-5">
+        <div    onClick={() => window.open("mailto:seifert.ansgar@gmail.com", "_blank")} className="w-[42.5%] h-10 hover:brightness-90 hover:scale-105 transition-transform cursor-pointer items-center rounded-2xl  gap-1 justify-center flex bg-text-secondary">
           <Mail className="h-5 " />
           <p>Hire me</p>
         </div>
-        <div className="w-[42.5%] h-10 items-center hover:brightness-90  hover:scale-105 transition-transform cursor-pointer rounded-2xl  gap-1 justify-center flex bg-custom-gray">
+        <div
+          onClick={() => {
+            window.open("https://github.com/Goldinyan", "_blank");
+          }}
+          className="w-[42.5%] h-10 items-center hover:brightness-90  hover:scale-105 transition-transform cursor-pointer rounded-2xl  gap-1 justify-center flex bg-custom-gray"
+        >
           <Github className="h-5 text-white" />
           <p className="text-white">Github</p>
         </div>
