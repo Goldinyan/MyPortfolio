@@ -70,7 +70,7 @@ export default function Home() {
                   </div>
 
                   <p className="text-text-secondary text-sm italic mb-4 pt-2">
-                   {`"${testimonial.feedback}"`}  
+                   {`${testimonial.feedback}`}  
                   </p>
                 </div>
               </TiltCard>
