@@ -47,8 +47,8 @@ export default function ProjectCard({
 
     
   return (
-    <div className="bg-card-bg border border-border-bg rounded-2xl p-4">
-      <img src={img} alt={title} className="rounded-lg mb-2" />
+    <div className="bg-card-bg border border-border-bg  h-70">
+      {/* <img src={img} alt={title} className="rounded-lg mb-2" />
       <p className="text-lg font-bold">{title}</p>
       <p className="text-sm text-text-primary">{description}</p>
       <div className="flex flex-wrap gap-2 mt-2">
@@ -57,6 +57,11 @@ export default function ProjectCard({
             {tag}
           </span>
         ))}
+
+      </div> */}
+      <div className="bg-custom-gray ">
+        <p>Live Demo</p>
+        <p>Code</p>
       </div>
     </div>
   );

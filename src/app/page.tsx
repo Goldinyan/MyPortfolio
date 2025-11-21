@@ -4,8 +4,9 @@ import Services from "./services";
 import LittleStuff from "./littleStuff";
 import WorkTogether from "./workTogether";
 import Projects from "./projects";
-import TechStack from "./webTechStack";
+import WebTechStack from "./webTechStack";
 import Testimonials from "./testimonials";
+import OtherTechStack from "./otherTechStack";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
 
         <div>
           <div className="p-2 rounded-2xl">
-            <TechStack />
+            <WebTechStack />
           </div>
           <div className="p-2 rounded-2xl">
             <LittleStuff />
@@ -36,6 +37,9 @@ export default function Home() {
         </div>
 
         <div>
+          <div className="p-2 rounded-2xl">
+              <OtherTechStack />
+          </div>
           <div className="p-2 rounded-2xl">
             <Testimonials />
           </div>

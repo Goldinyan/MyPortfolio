@@ -415,7 +415,7 @@ export default function Home() {
             {filProjects.map((project, i) => {
               return (
                 <div
-                  className="bg-card-bg w-full border border-border-bg rounded-2xl"
+                  className="w-full"
                   key={i}
                 >
                   <ProjectCard project={project} />
