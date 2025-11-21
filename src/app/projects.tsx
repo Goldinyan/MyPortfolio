@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function Projects() {
 
     const router = useRouter(); 
-    const stuff = ["./assets/pg1.png", "./assets/pg2.png", "./assets/pg3.png"];
+    const stuff = ["./pg1.png", "./pg2.png", "./pg3.png"];
 
   return (
     <div className="w-full   border-2  rounded-2xl bg-card-bg border-border-bg  ">

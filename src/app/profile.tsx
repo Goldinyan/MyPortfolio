@@ -29,7 +29,7 @@ export default function Profile() {
       <div className="flex items-center gap-5">
         <img
           alt="Profile Picture"
-          src="./assets/bgFunny.jpg"
+          src="./bgFunny.jpg"
           className="h-25 rounded-2xl ml-[5%] mt-5 object-cover"
         />
         <div className="flex flex-col ">
