@@ -39,7 +39,7 @@ export default function Profile() {
             Goldinyan
           </p>
           <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
-            I'm a{" "}
+            I&apos;m a{" "}
             <span className="text-text-secondary">Full Stack Developer</span>
           </p>
         </div>
