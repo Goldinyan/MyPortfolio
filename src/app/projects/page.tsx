@@ -89,15 +89,14 @@ export default function Home() {
         "TypeScript",
         "Tailwind",
         "Firebase",
-        "Next.js",
-        "Node.js",
-        "ShadCN/UI",
+        "MySQL",
+        "ShadCN/UI"
       ],
       description: "ds",
-      date: new Date("2025-08-16"),
-      img: "./pg1.png",
-      openSource: false,
-      hasDemo: true,
+      date: new Date("2024-11-13"),
+      img: "./pg2.png",
+      openSource: true,
+      hasDemo: false,
       sourceLink: "",
       demoLink: "",
     },
@@ -107,15 +106,13 @@ export default function Home() {
       tags: [
         "TypeScript",
         "Tailwind",
-        "Firebase",
-        "Next.js",
-        "Node.js",
         "ShadCN/UI",
+        "Flowbite"
       ],
       description: "ds",
-      date: new Date("2025-08-16"),
-      img: "./pg1.png",
-      openSource: false,
+      date: new Date("2025-05-02"),
+      img: "./pg3.png",
+      openSource: true,
       hasDemo: true,
       sourceLink: "",
       demoLink: "",
@@ -410,7 +407,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="p-4">
+        <div className="mt-5">
           <div className="grid md:grid-cols-2 mx-10 gap-4">
             {filProjects.map((project, i) => {
               return (
