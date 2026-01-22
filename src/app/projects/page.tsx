@@ -28,6 +28,8 @@ type TypeFilter = {
 
 export const Tags = [
   "TypeScript",
+  "C",
+  "SDL2",
   "Daisy",
   "Firebase",
   "MySQL",
@@ -66,6 +68,34 @@ export default function Home() {
   const [filProjects, setFilProjects] = useState<Project[]>([]);
   const projects: Project[] = [
     {
+      title: "Game of Life - C",
+      featured: false,
+      tags: ["C", "SDL2"],
+      description:
+        "A C implementation of Conway's Game of Life using the SDL2 library for graphical rendering.",
+      date: new Date("2025-12-14"),
+      img: "./GameOfLifeC.png",
+      workingOn: false,
+      openSource: true,
+      hasDemo: false,
+      sourceLink: "https://github.com/Goldinyan/Game_Of_Life",
+      demoLink: "",
+    },
+    {
+      title: "Simpel Raytracing - C",
+      featured: false,
+      tags: ["C", "SDL2"],
+      description:
+        "A basic raytracing program written in C using the SDL2 library to render 2D scenes with simple lighting and shading and Mirrors.",
+      date: new Date("2025-10-12"),
+      img: "./SimpleRaytracing.png",
+      workingOn: true,
+      openSource: true,
+      hasDemo: false,
+      sourceLink: "https://github.com/Goldinyan/Simple-Raytracing",
+      demoLink: "",
+    },
+    {
       title: "Coding Kids",
       featured: false,
       tags: [
@@ -97,7 +127,7 @@ export default function Home() {
 
   const toggle = (tag: Tag) => {
     setTagsFilter((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
   };
 
@@ -131,7 +161,7 @@ export default function Home() {
 
     if (tagsFilter.length !== 0) {
       sortedProjects = sortedProjects.filter((project) =>
-        tagsFilter.every((tag) => project.tags.includes(tag))
+        tagsFilter.every((tag) => project.tags.includes(tag)),
       );
     }
 
@@ -167,7 +197,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-bg-black max-w-350 mt-6 flex flex-col l:h-48  w-[85%] mx-auto rounded-xl border-border-light border-1">
+        <div className="bg-bg-black max-w-350 mt-6 flex flex-col l:h-60  w-[85%] mx-auto rounded-xl border-border-light border-1">
           <div
             onClick={() => setShowFilter((prev) => !prev)}
             className="w-[95%] bg-bg-black md:hidden p-2 hover:bg-island-bg  items-center justify-start mt-3 mb-3 flex mx-auto rounded-xl border-border-light border-1 "
@@ -199,11 +229,10 @@ export default function Home() {
                     className="flex items-center gap-2 cursor-pointer"
                   >
                     <div
-                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${
-                        typeFilter.demo
+                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${typeFilter.demo
                           ? "bg-text-secondary text-black"
                           : "bg-bg-black border-border-bg"
-                      }`}
+                        }`}
                     >
                       {typeFilter.demo && <Check className="" />}
                     </div>
@@ -220,11 +249,10 @@ export default function Home() {
                     className="flex items-center gap-2 cursor-pointer"
                   >
                     <div
-                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${
-                        typeFilter.openSource
+                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${typeFilter.openSource
                           ? "bg-text-secondary text-black"
                           : "bg-bg-black border-border-bg"
-                      }`}
+                        }`}
                     >
                       {typeFilter.openSource && <Check className="" />}
                     </div>
@@ -243,11 +271,10 @@ export default function Home() {
                     className="flex items-center gap-2 cursor-pointer"
                   >
                     <div
-                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${
-                        typeFilter.workingOn
+                      className={`w-4 h-4 flex items-center border-text-secondary justify-center border rounded-full ${typeFilter.workingOn
                           ? "bg-text-secondary text-black"
                           : "bg-bg-black border-border-bg"
-                      }`}
+                        }`}
                     >
                       {typeFilter.workingOn && <Check className="" />}
                     </div>
@@ -274,11 +301,10 @@ export default function Home() {
                       onClick={() => toggle(tag)}
                     >
                       <p
-                        className={`text-sm px-2 py-1  rounded-lg font-medium ${
-                          tagsFilter.includes(tag)
+                        className={`text-sm px-2 py-1  rounded-lg font-medium ${tagsFilter.includes(tag)
                             ? " bg-text-secondary text-black"
                             : "bg-island-bg"
-                        }`}
+                          }`}
                       >
                         {tag}
                       </p>
@@ -308,11 +334,10 @@ export default function Home() {
                     <div
                       className={`absolute left-0 top-full mt-2 w-full bg-bg-black rounded-xl border border-border-light
       transition-all duration-300 ease-out
-      ${
-        selectOpen
-          ? "opacity-100 scale-y-100"
-          : "opacity-0 scale-y-0 pointer-events-none"
-      }`}
+      ${selectOpen
+                          ? "opacity-100 scale-y-100"
+                          : "opacity-0 scale-y-0 pointer-events-none"
+                        }`}
                     >
                       {sortValues.map((value) => (
                         <div
@@ -358,7 +383,7 @@ export default function Home() {
                           className="hover:brightness-90 items-center rounded-lg px-2 py-1 flex flex-row bg-dark-bg border-1 border-border-bg"
                           onClick={() =>
                             setTagsFilter((prev) =>
-                              prev.filter((t) => t !== tag)
+                              prev.filter((t) => t !== tag),
                             )
                           }
                         >
@@ -372,22 +397,19 @@ export default function Home() {
                   </div>
                   <div
                     onClick={() => resetFilter()}
-                    className={`${
-                      checkFilters()
+                    className={`${checkFilters()
                         ? " border-border-light cursor-pointer"
                         : "border-border-bg  cursor-not-allowed"
-                    } w-full  gap-3  justify-center  p-2  items-center  mb-3 flex mx-auto rounded-xl  border-1 `}
+                      } w-full  gap-3  justify-center  p-2  items-center  mb-3 flex mx-auto rounded-xl  border-1 `}
                   >
                     <RotateCcw
-                      className={`${
-                        checkFilters() ? "text-white" : "text-text-primary"
-                      } h-4 w-4 `}
+                      className={`${checkFilters() ? "text-white" : "text-text-primary"
+                        } h-4 w-4 `}
                     />
 
                     <p
-                      className={`${
-                        checkFilters() ? "text-white" : "text-text-primary"
-                      } `}
+                      className={`${checkFilters() ? "text-white" : "text-text-primary"
+                        } `}
                     >
                       Reset All Filters
                     </p>
@@ -398,11 +420,11 @@ export default function Home() {
           )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-10">
           <div className="grid md:grid-cols-2 x:grid-cols-3 w-[85%] max-w-350 mx-auto gap-4">
             {filProjects.map((project, i) => {
               return (
-                <div className="w-full md:max-w-140 h-10 lg:max-w-170" key={i}>
+                <div className="w-full md:max-w-140  lg:max-w-170" key={i}>
                   <ProjectCard project={project} />
                 </div>
               );

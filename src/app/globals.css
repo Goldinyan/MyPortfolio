@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
-
 @theme {
-  --breakpoint-*: initial; 
+  --breakpoint-*: initial;
   --breakpoint-sm: 480px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 976px;
@@ -10,34 +9,29 @@
   --breakpoint-x: 1450px;
   --breakpoint-xl: 1900px;
 
-  --color-orange-500: #ffa500; 
+  --color-orange-500: #ffa500;
   --text-xxs: 0.65rem;
-  --text-sm2: 1rem;
-  --text-md: 1.2rem;
+  --text-sm2: 1rem --text-md: 1.2rem;
 }
-
 
 @theme {
   --color-bg-black: #0e0c0d;
   --color-card-bg: #0f0f0f;
   --color-small-card-bg: #0e0c0d;
-  --color-darked-border: #0B0B0B;
+  --color-darked-border: #0b0b0b;
   --color-border-bg: #1a1a1a;
   --color-border-light: #303030;
   --color-island-bg: #171718;
   --color-text-primary: #878d97;
   --color-text-secondary: #a7c7ff;
-  --color-text-third: #CBCFD5;
+  --color-text-third: #cbcfd5;
   --color-custom-gray: #1e1e1f;
   --color-custom-gray-2: #464547;
 }
 
-
-
 body {
   font-family: var(--font-chillax);
 }
-
 
 @font-face {
   font-family: "Chillax";
@@ -47,18 +41,14 @@ body {
   font-display: swap;
 }
 
-
 @theme {
   --font-chillax: "Chillax", sans-serif;
 }
 
-
-html, body {
+html,
+body {
   @apply bg-bg-black h-full;
 }
-
-
-
 
 @keyframes infiniteScroll {
   0% {
@@ -111,25 +101,35 @@ html, body {
 }
 
 .fade-mask::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 120px;
-  background: linear-gradient(90deg, var(--color-card-bg) 0px, var(--color-card-bg) 10px, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    var(--color-card-bg) 0px,
+    var(--color-card-bg) 10px,
+    transparent 100%
+  );
   z-index: 10;
   pointer-events: none;
 }
 
 .fade-mask::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   width: 120px;
-  background: linear-gradient(270deg, var(--color-card-bg) 0px, var(--color-card-bg) 10px, transparent 100%);
+  background: linear-gradient(
+    270deg,
+    var(--color-card-bg) 0px,
+    var(--color-card-bg) 10px,
+    transparent 100%
+  );
   z-index: 10;
   pointer-events: none;
 }
@@ -139,24 +139,42 @@ html, body {
   animation-play-state: paused;
 }
 
-
 .marquee {
   display: inline-block;
-  white-space: nowrap;  
+  white-space: nowrap;
   animation: scroll-left 5s linear infinite;
-  transform: translateX(100%); 
+  transform: translateX(100%);
   will-change: transform;
 }
 
 .bg-top-splash {
-  background-color: #0e0c0d; 
+  background-color: #0e0c0d;
   background-image:
-    radial-gradient(circle at 15% 25%, rgba(167, 199, 255, 0.12) 0%, transparent 18%),
-    radial-gradient(circle at 70% 15%, rgba(167, 199, 255, 0.10) 0%, transparent 22%),
-    radial-gradient(circle at 40% 40%, rgba(167, 199, 255, 0.08) 0%, transparent 20%),
-    radial-gradient(circle at 85% 35%, rgba(167, 199, 255, 0.06) 0%, transparent 18%),
-    radial-gradient(circle at 30% 60%, rgba(167, 199, 255, 0.07) 0%, transparent 25%);
+    radial-gradient(
+      circle at 15% 25%,
+      rgba(167, 199, 255, 0.12) 0%,
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 70% 15%,
+      rgba(167, 199, 255, 0.1) 0%,
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      rgba(167, 199, 255, 0.08) 0%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 85% 35%,
+      rgba(167, 199, 255, 0.06) 0%,
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 30% 60%,
+      rgba(167, 199, 255, 0.07) 0%,
+      transparent 25%
+    );
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-

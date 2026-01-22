@@ -10,7 +10,29 @@ import OtherTechStack from "./otherTechStack";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-bg-black overflow-x-hidden">
+    <div
+      className="w-full min-h-screen bg-bg-black overflow-x-hidden"
+      style={{
+        backgroundImage: `
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 39px,
+          rgba(211, 211, 211, 0.08) 39px,
+          rgba(211, 211, 211, 0.08) 40px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 39px,
+          rgba(211, 211, 211, 0.08) 39px,
+          rgba(211, 211, 213, 0.08) 40px
+        )
+      `,
+        backgroundSize: "40px 40px",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="grid grid-cols-1  l:grid-cols-2 xl:grid-cols-3 p-4 mx-[2%]">
         <div>
           <div className="p-2 rounded-2xl">
@@ -38,7 +60,7 @@ export default function Home() {
 
         <div>
           <div className="p-2 rounded-2xl">
-              <OtherTechStack />
+            <OtherTechStack />
           </div>
           <div className="p-2 rounded-2xl">
             <Testimonials />

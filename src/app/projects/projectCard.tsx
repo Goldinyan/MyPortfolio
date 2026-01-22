@@ -11,7 +11,9 @@ type Tag =
   | "ShadCN/UI"
   | "Tailwind"
   | "Flowbite"
-  | "Daisy";
+  | "Daisy"
+  | "C"
+  | "SDL2";
 
 interface Project {
   title: string;
@@ -68,20 +70,23 @@ export default function ProjectCard({
     <div className="bg-card-bg border group border-border-bg rounded-2xl">
       <div className="flex flex-col  ">
         <div className="flex items-center justify-center h-60">
-          {/*
-        <div className="aspect-video border border-border-bg  w-full rounded-t-2xl overflow-hidden">
-           <img
-            src={img}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-            alt="Project Image"
-          /> */}
-          <ImageOff
-            className="text-white h-20 w-20 font-light"
-            strokeWidth={1}
-          />
+          {title !== "Coding Kids" ? (
+            <div className="aspect-video border border-border-bg  w-full rounded-t-2xl overflow-hidden">
+              <img
+                src={img}
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                alt="Project Image"
+              />{" "}
+            </div>
+          ) : (
+            <ImageOff
+              className="text-white h-20 w-20 font-light"
+              strokeWidth={1}
+            />
+          )}
         </div>
 
-        <div className="mx-5 pt-5 min-h-60 flex flex-col">
+        <div className="mx-5 pt-10 min-h-60 flex flex-col">
           <div className="flex flex-row justify-between">
             <p className="text-white text-lg">{title}</p>
             {featured ? (

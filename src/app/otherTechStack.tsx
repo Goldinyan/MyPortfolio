@@ -3,55 +3,27 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function OtherTechStack() {
   const items: { text: string; pic: React.ReactNode; link?: string }[] = [
-  {
-    text: "Swift",
-    pic: (
-      <img
-        width="40"
-        height="40"
-        src="./swift.png"
-        alt="swift"
-      />
-    ),
-    link: "https://swift.org/", 
-  },
-  {
-    text: "Java",
-    pic: (
-      <img
-        width="40"
-        height="40"
-        src="./java.png"
-        alt="java"
-      />
-    ),
-    link: "https://www.java.com/", 
-  },
-  {
-    text: "C#",
-    pic: (
-      <img
-        width="40"
-        height="40"
-        src="./csharp.png"
-        alt="csharp"
-      />
-    ),
-    link: "https://learn.microsoft.com/dotnet/csharp/", 
-  },
-  {
-    text: "Go",
-    pic: (
-      <img
-        width="40"
-        height="40"
-        src="./go.png"
-        alt="go"
-      />
-    ),
-    link: "https://go.dev/", 
-  },
-];
+    {
+      text: "Swift",
+      pic: <img width="40" height="40" src="./swift.png" alt="swift" />,
+      link: "https://swift.org/",
+    },
+    {
+      text: "Java",
+      pic: <img width="40" height="40" src="./java.png" alt="java" />,
+      link: "https://www.java.com/",
+    },
+    {
+      text: "C#",
+      pic: <img width="40" height="40" src="./csharp.png" alt="csharp" />,
+      link: "https://learn.microsoft.com/dotnet/csharp/",
+    },
+    {
+      text: "Go",
+      pic: <img width="40" height="40" src="./go.png" alt="go" />,
+      link: "https://go.dev/",
+    },
+  ];
 
   return (
     <div className="w-full  border-2  rounded-2xl bg-card-bg border-border-bg  ">
@@ -59,8 +31,6 @@ export default function OtherTechStack() {
         <p className="text-white text-3xl">Beyond the Web</p>
         <p className="text-custom-gray-2 text-1 pt-1 ">
           Technologies I explore outside the web stack
-
-
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pb-10">
