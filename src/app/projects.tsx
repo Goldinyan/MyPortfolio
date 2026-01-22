@@ -1,11 +1,11 @@
 "use client";
 
+import { ImageOff } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function Projects() {
-
-    const router = useRouter(); 
-    const stuff = ["./pg1.png", "./pg2.png", "./CodingKids.png"];
+  const router = useRouter();
+  const stuff = ["./pg1.png", "./pg2.png", "./CodingKids.png"];
 
   return (
     <div className="w-full   border-2  rounded-2xl bg-card-bg border-border-bg  ">
@@ -24,7 +24,7 @@ export default function Projects() {
       >
         <div className="fade-mask w-full ">
           <div className="scrolling-container">
-            {stuff.map((item, i) => (
+            {/*{stuff.map((item, i) => (
               <div
                 key={i}
                 className="inline-block rounded-xl  w-80   whitespace-nowrap"
@@ -47,15 +47,31 @@ export default function Projects() {
                   className=" object-cover rounded-2xl"
                 />
               </div>
+            ))}*/}
+            {stuff.map((item, i) => (
+              <div
+                key={i}
+                className="inline-block rounded-xl  w-80   whitespace-nowrap"
+              >
+                <ImageOff className="text-white h-20 w-20" strokeWidth={1} />
+              </div>
+            ))}
+            {stuff.map((item, i) => (
+              <div
+                key={i}
+                className="inline-block  w-80  rounded-xl whitespace-nowrap"
+              >
+                <ImageOff className="text-white h-20 w-20" strokeWidth={1} />
+              </div>
             ))}
           </div>
         </div>
       </div>
       <div className="flex items-center pb-8 justify-center">
         <div className="mx-auto flex absolute  items-center justify-center px-3 hover:scale-110 cursor-pointer transition-transform z-20 py-2 mb-4 bg-text-secondary  rounded-lg ">
-          <p onClick={() => (
-            router.push('/projects')
-          )} className="font-medium">View All Projects</p>
+          <p onClick={() => router.push("/projects")} className="font-medium">
+            View All Projects
+          </p>
         </div>
       </div>
     </div>

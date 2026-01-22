@@ -8,7 +8,6 @@ import {
   Printer,
   User,
   GraduationCap,
-  
 } from "lucide-react";
 import { Github, Mail, Omega } from "lucide-react";
 
@@ -19,7 +18,6 @@ export const traits = [
   { text: "3D-Print Addict", icon: Printer },
   { text: "16y/o", icon: User },
   { text: "Student", icon: GraduationCap },
-  { text: "Philosopher", icon: Omega },
 ];
 
 export default function Profile() {
@@ -39,8 +37,7 @@ export default function Profile() {
             Goldinyan
           </p>
           <p className="text-text-primary break-normal font-medium w-40 sm:w-60 pt-1 text-xl-plus">
-            I&apos;m a{" "}
-            <span className="text-text-secondary">Full Stack Developer</span>
+            I&apos;m a <span className="text-text-secondary">Developer</span>
           </p>
         </div>
       </div>
