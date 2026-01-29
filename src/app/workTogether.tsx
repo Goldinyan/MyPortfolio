@@ -24,10 +24,17 @@ export default function WorkTogether() {
 
         <div className="flex flex-col justify-center items-center p-4 pt-0">
           <p className="text-white font-bold text-xl">Lets Work Together</p>
-          <p className="font-medium text-text-primary">
+          <p className="font-medium text-text-primary text-center">
             and make your ideas come to{" "}
             <ReactTyped
-              strings={["life", "reality", "existence", "creation", "code", "products"]}
+              strings={[
+                "life",
+                "reality",
+                "existence",
+                "creation",
+                "code",
+                "products",
+              ]}
               typeSpeed={60}
               backSpeed={70}
               loop
@@ -46,7 +53,7 @@ export default function WorkTogether() {
                       window.location.href =
                         "mailto:seifert.ansgar@example.com";
                     } else {
-                      window.location.href = "https://github.com/Goldinyan"
+                      window.location.href = "https://github.com/Goldinyan";
                     }
                   }}
                   className="relative flex flex-col items-center "
