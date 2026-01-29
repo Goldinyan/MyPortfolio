@@ -29,18 +29,6 @@ interface Project {
   demoLink: string;
 }
 
-const color: Record<Tag, { text: string }> = {
-  TypeScript: { text: "text-blue-500" },
-  MySQL: { text: "text-blue-200" },
-  "Next.js": { text: "text-green-500" },
-  "Node.js": { text: "text-white" },
-  Firebase: { text: "text-black" },
-  "ShadCN/UI": { text: "text-white" },
-  Tailwind: { text: "text-sky-200" },
-  Flowbite: { text: "text-white" },
-  Daisy: { text: "text-white" },
-};
-
 interface ProjectCardProps {
   project: Project;
 }
