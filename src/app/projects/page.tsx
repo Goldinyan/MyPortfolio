@@ -68,7 +68,7 @@ export default function Home() {
   const [filProjects, setFilProjects] = useState<Project[]>([]);
   const projects: Project[] = [
     {
-      title: "Game of Life - C",
+      title: "Game of Life",
       featured: false,
       tags: ["C", "SDL2"],
       description:
@@ -82,7 +82,7 @@ export default function Home() {
       demoLink: "",
     },
     {
-      title: "Simpel Raytracing - C",
+      title: "Simpel Raytracing",
       featured: false,
       tags: ["C", "SDL2"],
       description:
@@ -114,6 +114,27 @@ export default function Home() {
       openSource: true,
       hasDemo: false,
       sourceLink: "https://github.com/Goldinyan/CodingKidsWebsite",
+      demoLink: "",
+    },
+    {
+      title: "DevCache",
+      featured: false,
+      tags: [
+        "TypeScript",
+        "Tailwind",
+        "Firebase",
+        "Next.js",
+        "Node.js",
+        "ShadCN/UI",
+      ],
+      description:
+        "A web platform for saving resources and configurations for developers, featuring browsing and Collection System.",
+      date: new Date("2025-08-16"),
+      img: "./CodingKids.png",
+      workingOn: true,
+      openSource: false,
+      hasDemo: false,
+      sourceLink: "",
       demoLink: "",
     },
   ];
@@ -420,8 +441,8 @@ export default function Home() {
           )}
         </div>
 
-        <div className="mt-10">
-          <div className="grid md:grid-cols-2 x:grid-cols-3 w-[85%] max-w-350 mx-auto gap-4">
+        <div className="mt-10 mb-30">
+          <div className="grid md:grid-cols-2 x:grid-cols-3 w-[85%] max-w-350 mx-auto gap-8">
             {filProjects.map((project, i) => {
               return (
                 <div className="w-full md:max-w-140  lg:max-w-170" key={i}>

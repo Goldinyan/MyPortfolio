@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Code, Star, BicepsFlexed, ImageOff } from "lucide-react";
+import { ExternalLink, Code, Star, Construction, ImageOff } from "lucide-react";
 
 type Tag =
   | "TypeScript"
@@ -69,8 +69,8 @@ export default function ProjectCard({
   return (
     <div className="bg-card-bg border group border-border-bg rounded-2xl">
       <div className="flex flex-col  ">
-        <div className="flex items-center justify-center h-60">
-          {title !== "Coding Kids" ? (
+        <div className="flex items-center justify-center">
+          {title !== "Coding Kids" && title !== "DevCache" ? (
             <div className="aspect-video border border-border-bg  w-full rounded-t-2xl overflow-hidden">
               <img
                 src={img}
@@ -79,10 +79,12 @@ export default function ProjectCard({
               />{" "}
             </div>
           ) : (
-            <ImageOff
-              className="text-white h-20 w-20 font-light"
-              strokeWidth={1}
-            />
+            <div className="flex items-center justify-center h-60">
+              <ImageOff
+                className="text-white h-20 w-20 font-light"
+                strokeWidth={1}
+              />
+            </div>
           )}
         </div>
 
@@ -99,8 +101,8 @@ export default function ProjectCard({
             )}
             {workingOn ? (
               <div className="flex flex-row bg-green-600/30 px-2 rounded-xl border justify-center items-center border-green-600 gap-3">
-                <BicepsFlexed className="text-green-600 h-5 w-5" />
-                <p className="text-green-600 ">Working On</p>
+                <Construction className="text-green-600 h-4 w-4" />
+                <p className="text-green-600 text-sm ">Bulding</p>
               </div>
             ) : (
               ""
@@ -130,11 +132,11 @@ export default function ProjectCard({
             onClick={() => goTo(demoLink)}
             className={`${hasDemo
                 ? "bg-text-secondary cursor-pointer hover:scale-110"
-                : "bg-text-secondary/40 "
+                : "bg-text-secondary/40 cursor-not-allowed "
               } flex flex-row w-1/3 justify-center gap-5 transition-all rounded-lg h-10 items-center `}
           >
             <ExternalLink />
-            <p>Live Demo</p>
+            <p>Demo</p>
           </div>
           <div
             onClick={() => goTo(sourceLink)}
@@ -147,7 +149,7 @@ export default function ProjectCard({
               className={` ${openSource ? "text-white cursor-pointer" : "text-text-primary"}`}
             />
             <p
-              className={` ${openSource ? "text-white cursor-pointer" : "text-text-primary"}`}
+              className={` ${openSource ? "text-white cursor-pointer" : "text-text-primary cursor-not-allowed"}`}
             >
               Code
             </p>
